@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		641A72D41C676B0C00BBFA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A72D31C676B0C00BBFA86 /* AppDelegate.swift */; };
-		641A72D61C676B0C00BBFA86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A72D51C676B0C00BBFA86 /* ViewController.swift */; };
+		641A72D61C676B0C00BBFA86 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A72D51C676B0C00BBFA86 /* TrainingViewController.swift */; };
 		641A72D91C676B0C00BBFA86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 641A72D71C676B0C00BBFA86 /* Main.storyboard */; };
 		641A72DB1C676B0C00BBFA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641A72DA1C676B0C00BBFA86 /* Assets.xcassets */; };
 		641A72DE1C676B0C00BBFA86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 641A72DC1C676B0C00BBFA86 /* LaunchScreen.storyboard */; };
 		641A72E61C677F9800BBFA86 /* TrainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A72E51C677F9800BBFA86 /* TrainMenuViewController.swift */; };
+		645AB4BA1C6B656A00921705 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645AB4B91C6B656A00921705 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		641A72D01C676B0C00BBFA86 /* EyeGym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeGym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641A72D31C676B0C00BBFA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		641A72D51C676B0C00BBFA86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		641A72D51C676B0C00BBFA86 /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
 		641A72D81C676B0C00BBFA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		641A72DA1C676B0C00BBFA86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		641A72DD1C676B0C00BBFA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		641A72DF1C676B0C00BBFA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		641A72E51C677F9800BBFA86 /* TrainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainMenuViewController.swift; sourceTree = "<group>"; };
+		645AB4B91C6B656A00921705 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				641A72D31C676B0C00BBFA86 /* AppDelegate.swift */,
-				641A72D51C676B0C00BBFA86 /* ViewController.swift */,
+				641A72D51C676B0C00BBFA86 /* TrainingViewController.swift */,
+				645AB4B91C6B656A00921705 /* IntroViewController.swift */,
 				641A72E51C677F9800BBFA86 /* TrainMenuViewController.swift */,
 				641A72D71C676B0C00BBFA86 /* Main.storyboard */,
 				641A72DA1C676B0C00BBFA86 /* Assets.xcassets */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				641A72D61C676B0C00BBFA86 /* ViewController.swift in Sources */,
+				641A72D61C676B0C00BBFA86 /* TrainingViewController.swift in Sources */,
 				641A72E61C677F9800BBFA86 /* TrainMenuViewController.swift in Sources */,
 				641A72D41C676B0C00BBFA86 /* AppDelegate.swift in Sources */,
+				645AB4BA1C6B656A00921705 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

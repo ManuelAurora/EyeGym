@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TrainingViewController: UIViewController {
 
     @IBOutlet weak var _stack: UIStackView!
     
     @IBAction func _buttonTapped(sender: UIButton) {
        
-        _stack.spacing = 300
+        _stack.spacing = 350
         
         UIView.animateWithDuration(90, animations: {_ in
             self.view.layoutIfNeeded()
             }, completion: {_ in
-                
+              _stack.spacing = 0
         })
     }
     
