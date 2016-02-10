@@ -1,25 +1,169 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o60-NY-vr9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Train Menu View Controller-->
+        <scene sceneID="JU8-VA-tyV">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6zX-22-ipy" customClass="TrainMenuViewController" customModule="EyeGym" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="qzD-dy-lZa"/>
+                        <viewControllerLayoutGuide type="bottom" id="1RV-wJ-dBv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="lDS-Ds-7eh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eAy-hk-UEW">
+                                <rect key="frame" x="191" y="321" width="200" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PS-HS-1fv">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cBD-Nn-Fhg"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="full_training"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWi-Rj-ueH">
+                                        <rect key="frame" x="0.0" y="60" width="200" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="J8n-AQ-AY1"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="stretching"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egG-L4-qNq">
+                                        <rect key="frame" x="0.0" y="120" width="200" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="jdd-0h-tWj"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="stereo_pics"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eAy-hk-UEW" secondAttribute="trailing" id="lhv-Jo-hSh"/>
+                            <constraint firstItem="eAy-hk-UEW" firstAttribute="leading" secondItem="lDS-Ds-7eh" secondAttribute="leading" id="rGW-3i-BQg"/>
+                            <constraint firstItem="1RV-wJ-dBv" firstAttribute="top" secondItem="eAy-hk-UEW" secondAttribute="bottom" constant="62" id="ujP-Zy-qEz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lhv-Jo-hSh"/>
+                                <exclude reference="rGW-3i-BQg"/>
+                                <exclude reference="ujP-Zy-qEz"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="lhv-Jo-hSh"/>
+                                <include reference="rGW-3i-BQg"/>
+                                <include reference="ujP-Zy-qEz"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIB-c8-vvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1014" y="495"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qNn-v2-Zi5">
+            <objects>
+                <viewController id="o60-NY-vr9" customClass="ViewController" customModule="EyeGym" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q4c-t4-nSy"/>
+                        <viewControllerLayoutGuide type="bottom" id="UQZ-1R-E7f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xMd-vq-Txt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0VS-ng-eQo">
+                                <rect key="frame" x="220" y="260" width="160" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-q7-YhB">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="RfL-E1-wYA"/>
+                                            <constraint firstAttribute="width" constant="80" id="woB-zg-koO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="rHm-lB-5LP">
+                                        <rect key="frame" x="80" y="0.0" width="80" height="80"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="CjR-g8-R6u"/>
+                                            <constraint firstAttribute="height" constant="80" id="Xlj-xf-Ovs"/>
+                                        </constraints>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="80" y="0.0" width="80" height="80"/>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="120" y="260" width="160" height="80"/>
+                                </variation>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="_buttonTapped:" destination="o60-NY-vr9" eventType="touchUpInside" id="44T-pf-Ce2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0VS-ng-eQo" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="0qM-Nr-zBO"/>
+                            <constraint firstItem="hOl-xZ-zZK" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="6y5-51-Xg1"/>
+                            <constraint firstItem="0VS-ng-eQo" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="B8f-tM-EtI"/>
+                            <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="hOl-xZ-zZK" secondAttribute="bottom" id="npE-Y0-17Y"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hOl-xZ-zZK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6y5-51-Xg1"/>
+                                <exclude reference="npE-Y0-17Y"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hOl-xZ-zZK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6y5-51-Xg1"/>
+                                <include reference="npE-Y0-17Y"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="_stack" destination="0VS-ng-eQo" id="Hf1-bU-rdL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOj-zk-xea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693.5" y="495"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle" width="338" height="338"/>
+        <image name="full_training" width="769" height="463"/>
+        <image name="stereo_pics" width="764" height="463"/>
+        <image name="stretching" width="766" height="468"/>
+    </resources>
 </document>

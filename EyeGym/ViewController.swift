@@ -10,6 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var _stack: UIStackView!
+    
+    @IBAction func _buttonTapped(sender: UIButton) {
+       
+        _stack.spacing = 300
+        
+        UIView.animateWithDuration(90, animations: {_ in
+            self.view.layoutIfNeeded()
+            }, completion: {_ in
+                
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
