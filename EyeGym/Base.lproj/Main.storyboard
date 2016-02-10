@@ -18,41 +18,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eAy-hk-UEW">
-                                <rect key="frame" x="191" y="321" width="200" height="180"/>
+                                <rect key="frame" x="191" y="321" width="823" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PS-HS-1fv" userLabel="FullWorkout">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PS-HS-1fv" userLabel="FullWorkout">
+                                        <rect key="frame" x="0.0" y="0.0" width="823" height="60"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="cBD-Nn-Fhg"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="full_training"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" ambiguous="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="823" height="60"/>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWi-Rj-ueH" userLabel="Stretching">
-                                        <rect key="frame" x="0.0" y="60" width="200" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWi-Rj-ueH" userLabel="Stretching">
+                                        <rect key="frame" x="0.0" y="60" width="823" height="60"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="J8n-AQ-AY1"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="stretching"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" ambiguous="YES">
                                             <rect key="frame" x="0.0" y="60" width="823" height="60"/>
                                         </variation>
                                         <connections>
                                             <segue destination="o60-NY-vr9" kind="show" identifier="ShowStretching" id="RMI-Ni-ObA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egG-L4-qNq" userLabel="Stereopictures">
-                                        <rect key="frame" x="0.0" y="120" width="200" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egG-L4-qNq" userLabel="Stereopictures">
+                                        <rect key="frame" x="0.0" y="120" width="823" height="60"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="jdd-0h-tWj"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="stereo_pics"/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" ambiguous="YES">
                                             <rect key="frame" x="0.0" y="120" width="823" height="60"/>
                                         </variation>
                                     </button>
@@ -62,49 +62,49 @@
                                     <rect key="frame" x="191" y="321" width="823" height="180"/>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F4-72-TOC">
-                                <rect key="frame" x="-20" y="-20" width="440" height="340"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4F4-72-TOC">
+                                <rect key="frame" x="-20" y="-20" width="638" height="338"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-Mr-iLy">
-                                        <rect key="frame" x="20" y="20" width="400" height="300"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-Mr-iLy">
+                                        <rect key="frame" x="0.0" y="0.0" width="638" height="338"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="e5S-ha-tAH">
-                                                <rect key="frame" x="20" y="20" width="400" height="270"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="e5S-ha-tAH">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="338"/>
                                                 <animations/>
-                                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                                <variation key="heightClass=compact" ambiguous="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="338" height="338"/>
                                                 </variation>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wLz-yd-vMd">
-                                                <rect key="frame" x="70" y="305" width="300" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wLz-yd-vMd">
+                                                <rect key="frame" x="338" y="0.0" width="300" height="338"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2f-Yz-4q5">
-                                                        <rect key="frame" x="20" y="20" width="150" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2f-Yz-4q5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="338"/>
                                                         <animations/>
                                                         <color key="backgroundColor" red="0.69371569899999996" green="0.7437705738" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Click here to see Intro"/>
-                                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <variation key="heightClass=compact" ambiguous="YES">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="338"/>
                                                         </variation>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0Z-ZH-mND">
-                                                        <rect key="frame" x="292" y="20" width="77" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0Z-ZH-mND">
+                                                        <rect key="frame" x="150" y="0.0" width="150" height="338"/>
                                                         <animations/>
                                                         <color key="backgroundColor" red="0.69371569899999996" green="0.7437705738" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="How to use"/>
-                                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <variation key="heightClass=compact" ambiguous="YES">
                                                             <rect key="frame" x="150" y="0.0" width="150" height="338"/>
                                                         </variation>
                                                     </button>
                                                 </subviews>
                                                 <animations/>
-                                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                                <variation key="heightClass=compact" ambiguous="YES">
                                                     <rect key="frame" x="338" y="0.0" width="300" height="338"/>
                                                 </variation>
                                             </stackView>
                                         </subviews>
                                         <animations/>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=compact" ambiguous="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="638" height="338"/>
                                         </variation>
                                         <variation key="widthClass=compact" alignment="fill" axis="vertical"/>
@@ -168,8 +168,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0VS-ng-eQo">
-                                <rect key="frame" x="220" y="260" width="160" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-d3-Rdz">
+                                <rect key="frame" x="75" y="397" width="152" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time interval:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHF-oD-BK6">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
+                                        <animations/>
+                                        <segments>
+                                            <segment title="01:00"/>
+                                            <segment title="01:30"/>
+                                            <segment title="02:00"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK">
+                                        <rect key="frame" x="0.0" y="53" width="152" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="0.84619204114978575" blue="0.67885609109491774" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="_buttonTapped:" destination="o60-NY-vr9" eventType="touchUpInside" id="44T-pf-Ce2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <variation key="widthClass=compact" axis="vertical"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Start to begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-Hg-hRc">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0VS-ng-eQo">
+                                <rect key="frame" x="220" y="260" width="210" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-q7-YhB">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -179,8 +218,8 @@
                                             <constraint firstAttribute="width" constant="80" id="woB-zg-koO"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="rHm-lB-5LP">
-                                        <rect key="frame" x="80" y="0.0" width="80" height="80"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="rHm-lB-5LP">
+                                        <rect key="frame" x="130" y="0.0" width="80" height="80"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="CjR-g8-R6u"/>
@@ -190,44 +229,66 @@
                                 </subviews>
                                 <animations/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="_buttonTapped:" destination="o60-NY-vr9" eventType="touchUpInside" id="44T-pf-Ce2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0VS-ng-eQo" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="0qM-Nr-zBO"/>
-                            <constraint firstItem="hOl-xZ-zZK" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="6y5-51-Xg1"/>
-                            <constraint firstItem="0VS-ng-eQo" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="B8f-tM-EtI"/>
-                            <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="hOl-xZ-zZK" secondAttribute="bottom" id="npE-Y0-17Y"/>
+                            <constraint firstItem="qy1-d3-Rdz" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="6YR-Z6-4UM">
+                                <variation key="heightClass=compact" constant="5"/>
+                            </constraint>
+                            <constraint firstItem="0VS-ng-eQo" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="B8f-tM-EtI">
+                                <variation key="heightClass=compact" constant="-61"/>
+                            </constraint>
+                            <constraint firstItem="4gh-Hg-hRc" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="Dek-Iu-epL"/>
+                            <constraint firstItem="4gh-Hg-hRc" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="29" id="T5a-1L-PfZ"/>
+                            <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="qy1-d3-Rdz" secondAttribute="bottom" constant="55" id="ZaB-7s-8au">
+                                <variation key="heightClass=compact" constant="28"/>
+                            </constraint>
+                            <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="qy1-d3-Rdz" secondAttribute="bottom" constant="42" id="jBZ-t8-p6l">
+                                <variation key="widthClass=compact" constant="63"/>
+                            </constraint>
+                            <constraint firstItem="qy1-d3-Rdz" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="wdH-Jc-gvz">
+                                <variation key="widthClass=compact" constant="-5"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="hOl-xZ-zZK"/>
+                                <exclude reference="4gh-Hg-hRc"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6y5-51-Xg1"/>
-                                <exclude reference="npE-Y0-17Y"/>
+                                <exclude reference="Dek-Iu-epL"/>
+                                <exclude reference="T5a-1L-PfZ"/>
+                                <exclude reference="6YR-Z6-4UM"/>
+                                <exclude reference="wdH-Jc-gvz"/>
+                                <exclude reference="ZaB-7s-8au"/>
+                                <exclude reference="jBZ-t8-p6l"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="4gh-Hg-hRc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Dek-Iu-epL"/>
+                                <include reference="T5a-1L-PfZ"/>
+                                <include reference="6YR-Z6-4UM"/>
+                                <include reference="ZaB-7s-8au"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="hOl-xZ-zZK"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="6y5-51-Xg1"/>
-                                <include reference="npE-Y0-17Y"/>
+                                <include reference="wdH-Jc-gvz"/>
+                                <include reference="jBZ-t8-p6l"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="_chooseTimeIntLabel" destination="lHF-oD-BK6" id="4dd-Ij-WxJ"/>
+                        <outlet property="_pressStartLabel" destination="4gh-Hg-hRc" id="HVa-gi-jwZ"/>
                         <outlet property="_stack" destination="0VS-ng-eQo" id="Hf1-bU-rdL"/>
+                        <outlet property="_startButton" destination="hOl-xZ-zZK" id="faq-9o-K7u"/>
+                        <outlet property="_timeIntervalSegControl" destination="Zsv-l6-iQU" id="pq0-RP-F0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOj-zk-xea" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,6 +304,7 @@
                         <viewControllerLayoutGuide type="bottom" id="14m-Uy-f3M"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hoq-Hv-ZlO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="70H-fl-xpY">
