@@ -11,11 +11,14 @@ import UIKit
 class TrainingViewController: UIViewController
 {
     
-    @IBOutlet weak var _startButton            : UIButton!
     @IBOutlet weak var _chooseTimeIntLabel     : UILabel!
     @IBOutlet weak var _pressStartLabel        : UILabel!
+    @IBOutlet weak var _rotateNotificationLabel: UILabel!
+    @IBOutlet weak var _startButton            : UIButton!
+    @IBOutlet weak var _aboutButton            : UIButton!
+    @IBOutlet weak var _howToUseButton         : UIButton!
     @IBOutlet weak var _timeIntervalSegControl : UISegmentedControl!
-   
+  
     var _leftCircle = UIImageView()
     var _rightCircle = UIImageView()
     var _trainingInProcess = false
@@ -33,7 +36,7 @@ class TrainingViewController: UIViewController
             case 2 : interval = 120
             default : break
             }
-            
+    
             performStretching(interval)
         }
         startStopTraining()
@@ -42,13 +45,28 @@ class TrainingViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         createCircles()
+        
+        if self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular {
+            _leftCircle.hidden  = true
+            _rightCircle.hidden = true
+        }
+    }
+    
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        
+        let result = self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular
+        
+        _rotateNotificationLabel.hidden = !result
+        _leftCircle.hidden   = result
+        _rightCircle.hidden  = result
+        _startButton.enabled = !result
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
     func performStretching(timer: NSTimeInterval) {
        
@@ -60,6 +78,8 @@ class TrainingViewController: UIViewController
            
             }, completion: {_ in
                 self.removeCircles()
+                self._trainingInProcess = false
+                self.animateView()
         })
     }
     
@@ -97,7 +117,7 @@ class TrainingViewController: UIViewController
         rightCircle.trailingAnchor.constraintGreaterThanOrEqualToAnchor(view.trailingAnchor, constant: -180).active = true
         rightCircle.topAnchor.constraintEqualToAnchor(view.topAnchor, constant: 60).active = true
         rightCircle.heightAnchor.constraintEqualToConstant(70).active = true
-        rightCircle.widthAnchor.constraintEqualToConstant(70).active = true        
+        rightCircle.widthAnchor.constraintEqualToConstant(70).active = true
     }
     
     func removeCircles() {
@@ -106,14 +126,16 @@ class TrainingViewController: UIViewController
     }
     
     func animateView() {
-        
         UIView.animateWithDuration(0.67, animations: {_ in
             self.view.layoutIfNeeded()
             self._timeIntervalSegControl.hidden = self._trainingInProcess
-            self._chooseTimeIntLabel.hidden = self._trainingInProcess
-            self._pressStartLabel.hidden = self._trainingInProcess
+            self._chooseTimeIntLabel.hidden     = self._trainingInProcess
+            self._pressStartLabel.alpha = self._trainingInProcess ? 0.0 : 1.0
+            self._aboutButton.alpha     = self._trainingInProcess ? 0.0 : 1.0
+            self._howToUseButton.alpha  = self._trainingInProcess ? 0.0 : 1.0
+            if self._trainingInProcess == false { self.createCircles() }
             }, completion: {_ in
-                    if self._trainingInProcess == false { self.createCircles() }
+               
         })
         
         _trainingInProcess == true ? _startButton.setTitle("Stop", forState: .Normal) : self._startButton.setTitle("Start", forState: .Normal)
