@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Stretching-1.png",
+      "filename" : "earth.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Stretching.png",
       "scale" : "2x"
     },
     {
