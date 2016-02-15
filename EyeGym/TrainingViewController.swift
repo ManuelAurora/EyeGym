@@ -99,7 +99,7 @@ class TrainingViewController: UIViewController
         view.layoutIfNeeded()
         let leftCircle = UIImageView()
         leftCircle.translatesAutoresizingMaskIntoConstraints = false
-        leftCircle.image = UIImage(named: "circle")
+        leftCircle.image = UIImage(named: "earth2")
         view.addSubview(leftCircle)
         _leftCircle = leftCircle
 
@@ -110,7 +110,7 @@ class TrainingViewController: UIViewController
         
         let rightCircle = UIImageView()
         rightCircle.translatesAutoresizingMaskIntoConstraints = false
-        rightCircle.image = UIImage(named: "circle")
+        rightCircle.image = UIImage(named: "earth2")
         view.addSubview(rightCircle)
         _rightCircle = rightCircle
         

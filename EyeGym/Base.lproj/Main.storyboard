@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, rotate the device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-Hg-hRc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please, rotate the device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-Hg-hRc">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,14 +31,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-d3-Rdz">
                                 <rect key="frame" x="75" y="397" width="162" height="97"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Choose time interval:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHF-oD-BK6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose time interval:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHF-oD-BK6">
                                         <rect key="frame" x="0.0" y="0.0" width="162" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
                                         <rect key="frame" x="0.0" y="30" width="162" height="29"/>
                                         <animations/>
                                         <segments>
@@ -47,7 +47,7 @@
                                             <segment title="02:00"/>
                                         </segments>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK">
                                         <rect key="frame" x="0.0" y="67" width="162" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="0.84619204114978575" blue="0.67885609109491774" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,13 +67,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHc-6L-Rle">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHc-6L-Rle">
                                 <rect key="frame" x="0.0" y="67" width="162" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.84619204110000001" blue="0.6788560911" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="About"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-RZ-iKq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-RZ-iKq">
                                 <rect key="frame" x="0.0" y="67" width="162" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.84619204110000001" blue="0.6788560911" alpha="1" colorSpace="calibratedRGB"/>
@@ -117,24 +117,24 @@
                                 <exclude reference="Vd0-RZ-iKq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Dek-Iu-epL"/>
-                                <exclude reference="GFB-Yk-Uhb"/>
-                                <exclude reference="T5a-1L-PfZ"/>
-                                <exclude reference="dQu-aG-CdQ"/>
                                 <exclude reference="3Eq-fL-avg"/>
                                 <exclude reference="St8-d6-7US"/>
                                 <exclude reference="4qa-2E-nCp"/>
                                 <exclude reference="hvc-Rp-Pgg"/>
                                 <exclude reference="q3g-AW-Z5Z"/>
-                                <exclude reference="wr2-IE-2Zn"/>
-                                <exclude reference="6YR-Z6-4UM"/>
-                                <exclude reference="wdH-Jc-gvz"/>
+                                <exclude reference="Dek-Iu-epL"/>
+                                <exclude reference="GFB-Yk-Uhb"/>
+                                <exclude reference="T5a-1L-PfZ"/>
+                                <exclude reference="dQu-aG-CdQ"/>
                                 <exclude reference="6do-SS-A0f"/>
                                 <exclude reference="ZaB-7s-8au"/>
                                 <exclude reference="jBZ-t8-p6l"/>
                                 <exclude reference="jJU-jI-qSe"/>
                                 <exclude reference="oYO-Uc-vja"/>
                                 <exclude reference="KGt-70-aDZ"/>
+                                <exclude reference="wr2-IE-2Zn"/>
+                                <exclude reference="6YR-Z6-4UM"/>
+                                <exclude reference="wdH-Jc-gvz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -146,28 +146,28 @@
                                 <include reference="Vd0-RZ-iKq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Dek-Iu-epL"/>
-                                <include reference="T5a-1L-PfZ"/>
                                 <include reference="3Eq-fL-avg"/>
                                 <include reference="St8-d6-7US"/>
                                 <include reference="4qa-2E-nCp"/>
                                 <include reference="hvc-Rp-Pgg"/>
                                 <include reference="q3g-AW-Z5Z"/>
-                                <include reference="wr2-IE-2Zn"/>
-                                <include reference="6YR-Z6-4UM"/>
+                                <include reference="Dek-Iu-epL"/>
+                                <include reference="T5a-1L-PfZ"/>
                                 <include reference="6do-SS-A0f"/>
                                 <include reference="ZaB-7s-8au"/>
                                 <include reference="jJU-jI-qSe"/>
                                 <include reference="oYO-Uc-vja"/>
                                 <include reference="KGt-70-aDZ"/>
+                                <include reference="wr2-IE-2Zn"/>
+                                <include reference="6YR-Z6-4UM"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
                                 <include reference="GFB-Yk-Uhb"/>
                                 <include reference="dQu-aG-CdQ"/>
-                                <include reference="wdH-Jc-gvz"/>
                                 <include reference="jBZ-t8-p6l"/>
+                                <include reference="wdH-Jc-gvz"/>
                             </mask>
                         </variation>
                     </view>
