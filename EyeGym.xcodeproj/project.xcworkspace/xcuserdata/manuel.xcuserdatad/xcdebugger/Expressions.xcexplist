@@ -42,5 +42,19 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.(animateImage(UIImageView, time : CGFloat) -&gt; ()).(closure #1):TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "image.frame.origin.x">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "speed">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
