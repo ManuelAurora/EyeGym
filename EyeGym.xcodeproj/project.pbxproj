@@ -20,6 +20,10 @@
 		6441FC711DC211D40012365D /* TrainingObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441FC701DC211D40012365D /* TrainingObjectView.swift */; };
 		6441FC731DC220D40012365D /* OvalShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441FC721DC220D40012365D /* OvalShapeLayer.swift */; };
 		6445E3471DBF897C0004ED65 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445E3461DBF897C0004ED65 /* Helpers.swift */; };
+		6449E8651DCB68CD005202B8 /* IntroductionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6449E8641DCB68CD005202B8 /* IntroductionPage.swift */; };
+		6449E8681DCB694A005202B8 /* IntroductionPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6449E8671DCB694A005202B8 /* IntroductionPageViewModel.swift */; };
+		6449E86A1DCB7458005202B8 /* IntroductionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6449E8691DCB7458005202B8 /* IntroductionView.xib */; };
+		6449E86D1DCB762F005202B8 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6449E86C1DCB762F005202B8 /* IntroductionView.swift */; };
 		644F2C3D1DBA13A70046F5A5 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644F2C3C1DBA13A70046F5A5 /* StartButtonView.swift */; };
 		64505AAB1C6C955900F13531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64505AAA1C6C955900F13531 /* Main.storyboard */; };
 		6B56AD002996EFE328387F23 /* Pods_EyeGym.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFA689E0BC2CDE3D3AA6727 /* Pods_EyeGym.framework */; };
@@ -43,6 +47,10 @@
 		6441FC701DC211D40012365D /* TrainingObjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingObjectView.swift; sourceTree = "<group>"; };
 		6441FC721DC220D40012365D /* OvalShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalShapeLayer.swift; sourceTree = "<group>"; };
 		6445E3461DBF897C0004ED65 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		6449E8641DCB68CD005202B8 /* IntroductionPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionPage.swift; sourceTree = "<group>"; };
+		6449E8671DCB694A005202B8 /* IntroductionPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionPageViewModel.swift; sourceTree = "<group>"; };
+		6449E8691DCB7458005202B8 /* IntroductionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroductionView.xib; sourceTree = "<group>"; };
+		6449E86C1DCB762F005202B8 /* IntroductionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		644F2C3C1DBA13A70046F5A5 /* StartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		64505AAA1C6C955900F13531 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCAAA8A48C541251652FA904 /* Pods-EyeGym.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeGym.release.xcconfig"; path = "Pods/Target Support Files/Pods-EyeGym/Pods-EyeGym.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				641A72D31C676B0C00BBFA86 /* AppDelegate.swift */,
+				6449E8661DCB68D1005202B8 /* Model */,
+				6449E86E1DCB770A005202B8 /* ViewModel */,
 				6441FC741DC224D30012365D /* View */,
 				6441FC761DC224FF0012365D /* Controller */,
 				6441FC771DC2250A0012365D /* Support files */,
@@ -114,7 +124,9 @@
 				6441FC701DC211D40012365D /* TrainingObjectView.swift */,
 				6434AA821DC7774A00A05C85 /* GradientView.swift */,
 				6441FC721DC220D40012365D /* OvalShapeLayer.swift */,
+				6449E86C1DCB762F005202B8 /* IntroductionView.swift */,
 				640BDE231DC75EB100141B83 /* Extensions */,
+				6449E86B1DCB7470005202B8 /* XIBs */,
 				6441FC751DC224E30012365D /* Storyboard */,
 			);
 			name = View;
@@ -148,6 +160,30 @@
 				641A72DF1C676B0C00BBFA86 /* Info.plist */,
 			);
 			name = "Support files";
+			sourceTree = "<group>";
+		};
+		6449E8661DCB68D1005202B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6449E8641DCB68CD005202B8 /* IntroductionPage.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6449E86B1DCB7470005202B8 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				6449E8691DCB7458005202B8 /* IntroductionView.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		6449E86E1DCB770A005202B8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6449E8671DCB694A005202B8 /* IntroductionPageViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		8F0474DD77F9DEA6DAAB8424 /* Frameworks */ = {
@@ -223,6 +259,7 @@
 			files = (
 				64505AAB1C6C955900F13531 /* Main.storyboard in Resources */,
 				641A72DE1C676B0C00BBFA86 /* LaunchScreen.storyboard in Resources */,
+				6449E86A1DCB7458005202B8 /* IntroductionView.xib in Resources */,
 				641A72DB1C676B0C00BBFA86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,9 +324,12 @@
 				6434AA831DC7774A00A05C85 /* GradientView.swift in Sources */,
 				6434AA7F1DC76AC700A05C85 /* UIStoryboard + Extension.swift in Sources */,
 				6441FC731DC220D40012365D /* OvalShapeLayer.swift in Sources */,
+				6449E8651DCB68CD005202B8 /* IntroductionPage.swift in Sources */,
 				641A72D61C676B0C00BBFA86 /* TrainingViewController.swift in Sources */,
+				6449E8681DCB694A005202B8 /* IntroductionPageViewModel.swift in Sources */,
 				6434AA7D1DC766FA00A05C85 /* IntroductionViewController.swift in Sources */,
 				6434AA811DC76E5200A05C85 /* DimmingPresentationController.swift in Sources */,
+				6449E86D1DCB762F005202B8 /* IntroductionView.swift in Sources */,
 				6445E3471DBF897C0004ED65 /* Helpers.swift in Sources */,
 				644F2C3D1DBA13A70046F5A5 /* StartButtonView.swift in Sources */,
 				641A72D41C676B0C00BBFA86 /* AppDelegate.swift in Sources */,

@@ -10,18 +10,32 @@ import UIKit
 
 class IntroductionViewController: UIViewController
 {
-    @IBOutlet weak var introductionView: UIView!
+    private let introductionViewModel = IntroductionPageViewModel()
+    
+    private var canCloseIntroView: Bool = false
+    
+    @IBOutlet weak var nextButton:       UIButton!
+    @IBOutlet weak var introductionView: IntroductionView!
     
     @IBAction func next(_ sender: UIButton) {
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        if canCloseIntroView
+        {
+            dismiss(animated: true, completion: nil)
+        }
+        else
+        {
+            introductionView.textView.text = introductionViewModel.nextPageText()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        introductionView.alpha = 1.0
-        introductionView.layer.cornerRadius = 10
         view.backgroundColor = UIColor.clear
+        
+        configureIntroView()
+        subscribeNotifications()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +45,23 @@ class IntroductionViewController: UIViewController
         modalPresentationStyle = .custom
     }
     
+    private func configureIntroView() {
+        
+        introductionView.alpha              = 1.0
+        introductionView.layer.cornerRadius = 10
+        introductionView.textView.text      = introductionViewModel.firstPageText()
+    }
+    
+    private func subscribeNotifications() {
+        
+        NotificationCenter.default.addObserver(
+            forName: NSNotification.Name(rawValue: ViewModelNotificationNames.lastIntroPageDidAppear.rawValue),
+            object: nil,
+            queue: nil) { _ in
+                self.nextButton.setTitle("Close", for: .normal)
+                self.canCloseIntroView = true
+        }
+    }
 }
 
 extension IntroductionViewController: UIViewControllerTransitioningDelegate

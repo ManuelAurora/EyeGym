@@ -113,31 +113,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XoW-RS-tgb" userLabel="Introduction View">
-                                <frame key="frameInset" minX="133" minY="37" width="400" height="318"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNj-ia-la1" userLabel="Introduction View" customClass="IntroductionView" customModule="EyeGym" customModuleProvider="target">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6K-Fg-oGh">
-                                        <frame key="frameInset" minX="343" minY="286" width="49" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Bd-E5w">
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="743" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-OX-2Qm">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-qS-saO"/>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-YC-0pr">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="K6N-XO-lQE"/>
+                                        </constraints>
                                         <state key="normal" title="Next" backgroundImage="nextButton"/>
                                         <connections>
-                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="5rO-Xc-AO9"/>
+                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="yUo-9J-fN9"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="5cw-rf-s8z"/>
+                                    <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="9" id="6Lq-gy-AxA"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="20" id="DgN-Gr-lo2"/>
+                                    <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="8" id="IcX-hR-6a5"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="35" id="VXf-sH-xKn"/>
+                                    <constraint firstItem="LNc-YC-0pr" firstAttribute="top" secondItem="z0e-Bd-E5w" secondAttribute="bottom" constant="37" id="YlY-AA-4VH"/>
+                                    <constraint firstAttribute="trailing" secondItem="z0e-Bd-E5w" secondAttribute="trailing" constant="20" id="p4p-dj-UiN"/>
+                                    <constraint firstAttribute="height" constant="320" id="t9e-Zb-Mmx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="PIP-qS-saO" id="Nnn-ab-9kS"/>
+                                    <outlet property="nextButton" destination="LNc-YC-0pr" id="Y3I-mO-4PA"/>
+                                    <outlet property="textView" destination="rWO-OX-2Qm" id="NnT-Bb-7SZ"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mNj-ia-la1" firstAttribute="centerY" secondItem="XUK-5a-dxu" secondAttribute="centerY" id="IaQ-T1-Fi2"/>
+                            <constraint firstItem="mNj-ia-la1" firstAttribute="centerX" secondItem="XUK-5a-dxu" secondAttribute="centerX" id="QCU-wk-NzE"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="introductionView" destination="XoW-RS-tgb" id="HCL-ZD-wMl"/>
+                        <outlet property="introductionView" destination="mNj-ia-la1" id="s4o-oY-PfE"/>
+                        <outlet property="nextButton" destination="LNc-YC-0pr" id="Ycb-is-g0r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6b-K6-9H1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2346.4767616191907" y="1160.8"/>
+            <point key="canvasLocation" x="2345.577211394303" y="1188"/>
         </scene>
     </scenes>
     <resources>

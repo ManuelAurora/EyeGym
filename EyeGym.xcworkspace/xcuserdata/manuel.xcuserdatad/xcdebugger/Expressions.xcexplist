@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "IntroductionPageViewModel.nextPage(from : Int) -&gt; IntroductionPage:IntroductionPageViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "introductionPages.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
          <PersistentStrings>
             <PersistentString

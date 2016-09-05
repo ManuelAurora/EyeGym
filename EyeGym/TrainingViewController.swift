@@ -90,7 +90,6 @@ class TrainingViewController: UIViewController, SegueHandlerType
             self.startButton.alpha            = 1
             self.timeIntervalSegControl.alpha = 1
         }
-
     }
     
     private func prepareForTraining() {

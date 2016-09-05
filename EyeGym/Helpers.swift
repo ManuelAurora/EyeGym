@@ -16,6 +16,11 @@ func delay(seconds: Double, completion: @escaping () -> ()) {
     DispatchQueue.main.asyncAfter(deadline: popTime, execute: completion)    
 }
 
+enum ViewModelNotificationNames: String
+{
+    case lastIntroPageDidAppear
+}
+
 struct AnimationConstants
 {    
     struct KeyPath
