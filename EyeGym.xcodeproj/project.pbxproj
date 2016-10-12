@@ -103,6 +103,7 @@
 					641A72CF1C676B0C00BBFA86 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 99MX98QF2R;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -258,6 +259,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AM.EyeGym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -273,6 +275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AM.EyeGym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

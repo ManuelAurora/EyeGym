@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "TrainingViewController.createCircles() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_leftCircle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.(animateView(TrainingViewController) -&gt; () -&gt; ()).(closure #2):TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_trainingInProcess">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TrainingViewController.animateView() -&gt; ():TrainingViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -19,23 +35,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "TrainingViewController.createCircles() -&gt; ():TrainingViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "_leftCircle">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "TrainingViewController.startStopTraining() -&gt; ():TrainingViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "_trainingInProcess">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TrainingViewController.(animateView(TrainingViewController) -&gt; () -&gt; ()).(closure #2):TrainingViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "_trainingInProcess">
@@ -53,6 +53,17 @@
             </PersistentString>
             <PersistentString
                value = "speed">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.toggleButtonTitle() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "startButton.titleLabel!.text">
+            </PersistentString>
+            <PersistentString
+               value = "isStarted">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
