@@ -10,6 +10,7 @@ import UIKit
 
 class TrainingViewController: UIViewController
 {
+    let maxRange: CGFloat = 200.0
     
     @IBOutlet weak var rightImage:              UIImageView! {
         didSet {
@@ -53,14 +54,14 @@ class TrainingViewController: UIViewController
     
     func animate(_ image: UIImageView, with time: Double, direction: Direction) {
         
-        let leftOriginalCenter  = leftImage.center
-        let rightOriginalCenter = rightImage.center
-      
-        let movePic = CABasicAnimation(keyPath: "position.x")
+        let movePic = CABasicAnimation(keyPath: "transform")
         
-        movePic.fromValue = direction == .left ? leftOriginalCenter.x : rightOriginalCenter.x
-        movePic.toValue   = direction == .left ? (image.frame.width / 2) : (view!.bounds.width - image.frame.width / 2)
+        let value: CGFloat = direction == .left ? -200 : 200
+        
+        movePic.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
+        movePic.toValue   = NSValue(caTransform3D: CATransform3DMakeTranslation(value, 0, 0))
         movePic.duration  = time
+        movePic.fillMode  = kCAFillModeBackwards
         
         image.layer.add(movePic, forKey: nil)
     }
