@@ -10,14 +10,14 @@ import UIKit
 
 class TrainingViewController: UIViewController
 {
-    let maxRange: CGFloat = 200.0
+    let maxDistance: CGFloat = 200.0
     
-    @IBOutlet weak var rightImage:              UIImageView! {
+    @IBOutlet weak var rightImage: UIImageView! {
         didSet {
             prepare(image: rightImage)
         }
     }
-    @IBOutlet weak var leftImage:               UIImageView! {
+    @IBOutlet weak var leftImage: UIImageView! {
         didSet {
             prepare(image: leftImage)
         }
@@ -54,24 +54,20 @@ class TrainingViewController: UIViewController
     
     func animate(_ image: UIImageView, with time: Double, direction: Direction) {
         
-        let movePic = CABasicAnimation(keyPath: "transform")
+        let movePic          = CABasicAnimation(keyPath: "transform")
+        let startedTransform = image.layer.transform
         
-        let value: CGFloat = direction == .left ? -200 : 200
+        let value: CGFloat = direction == .left ? -maxDistance : maxDistance
         
-        movePic.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
+        movePic.fromValue = startedTransform
         movePic.toValue   = NSValue(caTransform3D: CATransform3DMakeTranslation(value, 0, 0))
         movePic.duration  = time
-        movePic.fillMode  = kCAFillModeBackwards
         
         image.layer.add(movePic, forKey: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
-        
+        image.layer.transform = startedTransform
     }
-    
+        
     func prepare(image view: UIImageView) {
         
         view.layer.cornerRadius  = 30
