@@ -31,14 +31,11 @@ class StartButtonViewModel
         return layer
     }()
     
-    func makeMaskFor(button: UIButton) {
+    func makeGradientMaskViewWith(bounds: CGRect) {        
         
-        button.layer.addSublayer(gradientLayer)
-        button.layoutIfNeeded()
+        gradientLayer.frame = bounds
         
-        gradientLayer.frame = button.bounds
-        
-        UIGraphicsBeginImageContextWithOptions(button.frame.size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
         
         let textAttributes: [String: AnyObject] = {
             
@@ -52,7 +49,7 @@ class StartButtonViewModel
             ]
         }()
         
-        textForMask.draw(in: button.bounds, withAttributes: textAttributes)
+        textForMask.draw(in: bounds, withAttributes: textAttributes)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -61,7 +58,7 @@ class StartButtonViewModel
         let maskLayer = CALayer()
         
         maskLayer.backgroundColor = UIColor.clear.cgColor
-        maskLayer.frame           = button.bounds
+        maskLayer.frame           = bounds
         maskLayer.contents        = image?.cgImage
         
         gradientLayer.mask = maskLayer

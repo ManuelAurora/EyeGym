@@ -61,8 +61,12 @@ class TrainingViewController: UIViewController
        
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-   
-       startButtonViewModel.makeMaskFor(button: startButton)
+        
+        startButton.layer.addSublayer(startButtonViewModel.gradientLayer)
+        startButton.layoutIfNeeded()
+        startButtonViewModel.makeGradientMaskViewWith(bounds: startButton.bounds)
+        
+       
     }
     
     func animate(_ image: UIImageView, with time: Double, direction: Direction) {
