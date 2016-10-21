@@ -3,26 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "TrainingViewController.createCircles() -&gt; ():TrainingViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "_leftCircle">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TrainingViewController.(animateView(TrainingViewController) -&gt; () -&gt; ()).(closure #2):TrainingViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "_trainingInProcess">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "TrainingViewController.animateView() -&gt; ():TrainingViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "_trainingInProcess">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StartButtonViewModel.makeMaskFor(button : UIButton) -&gt; ():StartButtonViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gradientLayer.mask">
+            </PersistentString>
+            <PersistentString
+               value = "gradientLayer.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,13 +28,29 @@
                value = "(view!.bounds.width - image.frame.width / 2)">
             </PersistentString>
             <PersistentString
-               value = "leftOriginalCenter.x">
-            </PersistentString>
-            <PersistentString
                value = "( 0 + image.frame.width / 2)">
             </PersistentString>
             <PersistentString
+               value = "leftOriginalCenter.x">
+            </PersistentString>
+            <PersistentString
                value = "rightOriginalCenter.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StartButtonViewModel.createGradienAnimation() -&gt; CABasicAnimation:StartButtonViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gradientLayer.mask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.(animateView(TrainingViewController) -&gt; () -&gt; ()).(closure #2):TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_trainingInProcess">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -60,6 +71,50 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TrainingViewController.toggleButtonTitle() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "startButton.titleLabel!.text">
+            </PersistentString>
+            <PersistentString
+               value = "isStarted">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.viewDidLayoutSubviews() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "startButtonViewModel.gradientLayer.mask">
+            </PersistentString>
+            <PersistentString
+               value = "startButton.bounds">
+            </PersistentString>
+            <PersistentString
+               value = "startButton.frame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.createCircles() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_leftCircle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.startButton.didset:TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "startButtonViewModel.gradientLayer.mask">
+            </PersistentString>
+            <PersistentString
+               value = "startButtonViewModel.gradientLayer.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TrainingViewController.(animateImage(UIImageView, time : CGFloat) -&gt; ()).(closure #1):TrainingViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -70,17 +125,6 @@
             </PersistentString>
             <PersistentString
                value = "speed">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TrainingViewController.toggleButtonTitle() -&gt; ():TrainingViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "startButton.titleLabel!.text">
-            </PersistentString>
-            <PersistentString
-               value = "isStarted">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

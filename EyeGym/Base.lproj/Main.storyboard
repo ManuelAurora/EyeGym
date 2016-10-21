@@ -67,8 +67,6 @@
                                         </segments>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK">
-                                        <color key="backgroundColor" red="1" green="0.84619204114978575" blue="0.67885609109491774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="start" destination="o60-NY-vr9" eventType="touchUpInside" id="Ea9-Kc-mJP"/>
                                         </connections>
@@ -112,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOj-zk-xea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2346" y="474"/>
+            <point key="canvasLocation" x="2345.577211394303" y="472.80000000000001"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="x5R-ch-6xF">

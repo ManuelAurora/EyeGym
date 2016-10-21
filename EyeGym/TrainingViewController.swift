@@ -8,8 +8,17 @@
 
 import UIKit
 
+
 class TrainingViewController: UIViewController
 {
+    private let startButtonViewModel = StartButtonViewModel()
+    
+    var isStarted: Bool = false {
+        didSet {
+            toggleAnimations()
+        }
+    }
+    
     let maxDistance: CGFloat = 200.0
     
     @IBOutlet weak var rightImage: UIImageView! {
@@ -22,10 +31,15 @@ class TrainingViewController: UIViewController
             prepare(image: leftImage)
         }
     }
+   
     @IBOutlet weak var chooseTimeIntLabel:      UILabel!
     @IBOutlet weak var pressStartLabel:         UILabel!
     @IBOutlet weak var rotateNotificationLabel: UILabel!
-    @IBOutlet weak var startButton:             UIButton!
+    @IBOutlet weak var startButton:             UIButton! {
+        didSet {
+            self.startButton.titleLabel?.alpha = 0
+        }
+    }
     @IBOutlet weak var aboutButton:             UIButton!
     @IBOutlet weak var howToUseButton:          UIButton!
     @IBOutlet weak var timeIntervalSegControl:  UISegmentedControl!
@@ -35,14 +49,7 @@ class TrainingViewController: UIViewController
         case left
         case right
     }
-    
-    var isStarted = false {
-        didSet {
-            toggleButtonTitle()
-            toggleAnimations()
-        }
-    }
-    
+   
     @IBAction func start() {
         let timer = calculateTime(for: timeIntervalSegControl)
             
@@ -50,6 +57,12 @@ class TrainingViewController: UIViewController
         animate(rightImage, with: timer, direction: .right)
         
         isStarted = !isStarted
+    }
+       
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+   
+       startButtonViewModel.makeMaskFor(button: startButton)
     }
     
     func animate(_ image: UIImageView, with time: Double, direction: Direction) {
@@ -67,18 +80,11 @@ class TrainingViewController: UIViewController
         
         image.layer.transform = startedTransform
     }
-        
+    
     func prepare(image view: UIImageView) {
         
         view.layer.cornerRadius  = 30
         view.layer.masksToBounds = true
-    }
-    
-    func toggleButtonTitle() {
-        
-        let title =  isStarted ? "Stop" : "Start"
-
-        startButton.setTitle(title, for: .normal)
     }
     
     func toggleAnimations() {
