@@ -88,10 +88,10 @@
                value = "startButtonViewModel.gradientLayer.mask">
             </PersistentString>
             <PersistentString
-               value = "startButton.bounds">
+               value = "startButton.frame.size">
             </PersistentString>
             <PersistentString
-               value = "startButton.frame.size">
+               value = "startButton.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -125,6 +125,14 @@
             </PersistentString>
             <PersistentString
                value = "speed">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StartButton.textForMask.didset:StartButtonView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

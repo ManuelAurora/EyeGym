@@ -66,9 +66,9 @@
                                             <segment title="02:00"/>
                                         </segments>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK" customClass="StartButton" customModule="EyeGym" customModuleProvider="target">
                                         <connections>
-                                            <action selector="start" destination="o60-NY-vr9" eventType="touchUpInside" id="Ea9-Kc-mJP"/>
+                                            <action selector="start" destination="o60-NY-vr9" eventType="touchUpInside" id="62L-87-qHJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -104,7 +104,7 @@
                     <connections>
                         <outlet property="leftImage" destination="cK6-Vl-Cmn" id="3rT-kP-Vrz"/>
                         <outlet property="rightImage" destination="2P5-Rl-nnQ" id="cGa-Mg-GYc"/>
-                        <outlet property="startButton" destination="hOl-xZ-zZK" id="cqY-ol-M0z"/>
+                        <outlet property="startButton" destination="hOl-xZ-zZK" id="adS-zw-sPS"/>
                         <outlet property="timeIntervalSegControl" destination="Zsv-l6-iQU" id="Fk7-hc-bWt"/>
                     </connections>
                 </viewController>

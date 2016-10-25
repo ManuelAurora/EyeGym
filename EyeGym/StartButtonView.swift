@@ -8,9 +8,18 @@
 
 import UIKit
 
-class StartButtonViewModel
+class StartButton: UIButton
 {    
-    var textForMask = "Start"
+    var textForMask = "" {
+        
+        didSet
+        {            
+            layoutIfNeeded()
+            layer.addSublayer(gradientLayer)
+            makeGradientMaskViewWith(bounds: bounds)
+        }
+    }
+    
     
     let gradientLayer: CAGradientLayer = {
         

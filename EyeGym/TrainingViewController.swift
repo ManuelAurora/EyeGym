@@ -11,7 +11,6 @@ import UIKit
 
 class TrainingViewController: UIViewController
 {
-    private let startButtonViewModel = StartButtonViewModel()
     
     var isStarted: Bool = false {
         didSet {
@@ -35,11 +34,7 @@ class TrainingViewController: UIViewController
     @IBOutlet weak var chooseTimeIntLabel:      UILabel!
     @IBOutlet weak var pressStartLabel:         UILabel!
     @IBOutlet weak var rotateNotificationLabel: UILabel!
-    @IBOutlet weak var startButton:             UIButton! {
-        didSet {
-            self.startButton.titleLabel?.alpha = 0
-        }
-    }
+    @IBOutlet weak var startButton:             StartButton!
     @IBOutlet weak var aboutButton:             UIButton!
     @IBOutlet weak var howToUseButton:          UIButton!
     @IBOutlet weak var timeIntervalSegControl:  UISegmentedControl!
@@ -61,11 +56,8 @@ class TrainingViewController: UIViewController
        
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        startButton.layer.addSublayer(startButtonViewModel.gradientLayer)
-        startButton.layoutIfNeeded()
-        startButtonViewModel.makeGradientMaskViewWith(bounds: startButton.bounds)
-        
+      
+        startButton.textForMask = "Start"
        
     }
     
