@@ -3,6 +3,28 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "delay(seconds : Double, completion : () -&gt; ()) -&gt; ():Helpers.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DispatchTime.now()">
+            </PersistentString>
+            <PersistentString
+               value = "Double(Int64(Double(NSEC_PER_SEC) * seconds)) / Double(NSEC_PER_SEC)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.start() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.frame.height">
+            </PersistentString>
+            <PersistentString
+               value = "view.frame.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TrainingViewController.animateView() -&gt; ():TrainingViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -88,10 +110,10 @@
                value = "startButtonViewModel.gradientLayer.mask">
             </PersistentString>
             <PersistentString
-               value = "startButton.frame.size">
+               value = "startButton.bounds">
             </PersistentString>
             <PersistentString
-               value = "startButton.bounds">
+               value = "startButton.frame.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -133,6 +155,22 @@
          <PersistentStrings>
             <PersistentString
                value = "bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.(animationDidStop(CAAnimation, finished : Bool) -&gt; ()).(closure #1):TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "anim">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.animationDidStop(CAAnimation, finished : Bool) -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "layersToRemoveArray">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

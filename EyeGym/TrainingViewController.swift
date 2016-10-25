@@ -11,14 +11,42 @@ import UIKit
 
 class TrainingViewController: UIViewController
 {
+    fileprivate var ovalShapeLayer: CAShapeLayer {
+        
+        let ovalShapeLayer = CAShapeLayer()
+        
+            let radius: CGFloat = 40
+            
+            ovalShapeLayer.strokeColor     = UIColor.orange.cgColor
+            ovalShapeLayer.fillColor       = UIColor.clear.cgColor
+            ovalShapeLayer.lineDashPattern = [2, 3]
+            ovalShapeLayer.lineWidth       = 4
+            
+            ovalShapeLayer.path = UIBezierPath(
+                ovalIn: CGRect(
+                    x: controlPanelStackView.bounds.width / 2 - radius,
+                    y: controlPanelStackView.bounds.height / 2 - radius,
+                    width: radius * 2,
+                    height: radius * 2)
+                ).cgPath
+        
+        addPrepareForTrainingAnimations(to: ovalShapeLayer)
+        
+        return ovalShapeLayer
+    }
     
-    var isStarted: Bool = false {
-        didSet {
+    fileprivate var layersToRemoveArray = [CALayer]()
+    
+    private var isStarted: Bool = false {
+        didSet
+        {
             toggleAnimations()
+            
+            if isStarted { prepareForTraining() }
         }
     }
     
-    let maxDistance: CGFloat = 200.0
+    private let maxDistance: CGFloat = 150.0
     
     @IBOutlet weak var rightImage: UIImageView! {
         didSet {
@@ -31,6 +59,7 @@ class TrainingViewController: UIViewController
         }
     }
    
+    @IBOutlet weak var controlPanelStackView: UIStackView!
     @IBOutlet weak var chooseTimeIntLabel:      UILabel!
     @IBOutlet weak var pressStartLabel:         UILabel!
     @IBOutlet weak var rotateNotificationLabel: UILabel!
@@ -39,17 +68,25 @@ class TrainingViewController: UIViewController
     @IBOutlet weak var howToUseButton:          UIButton!
     @IBOutlet weak var timeIntervalSegControl:  UISegmentedControl!
     
-    enum Direction
+    private enum Direction
     {
         case left
         case right
     }
    
+    @IBAction func stopTraining(_ sender: UITapGestureRecognizer) {
+        
+    }
+    
     @IBAction func start() {
-        let timer = calculateTime(for: timeIntervalSegControl)
+        
+        let trainingTime = calculateTime(for: timeIntervalSegControl)
+        
+        delay(seconds: 5) {
             
-        animate(leftImage, with: timer, direction: .left)
-        animate(rightImage, with: timer, direction: .right)
+            self.animate(self.leftImage, with: trainingTime, direction: .left)
+            self.animate(self.rightImage, with: trainingTime, direction: .right)
+        }
         
         isStarted = !isStarted
     }
@@ -58,10 +95,9 @@ class TrainingViewController: UIViewController
         super.viewDidLayoutSubviews()
       
         startButton.textForMask = "Start"
-       
     }
     
-    func animate(_ image: UIImageView, with time: Double, direction: Direction) {
+    private func animate(_ image: UIImageView, with time: Double, direction: Direction) {
         
         let movePic          = CABasicAnimation(keyPath: "transform")
         let startedTransform = image.layer.transform
@@ -77,13 +113,13 @@ class TrainingViewController: UIViewController
         image.layer.transform = startedTransform
     }
     
-    func prepare(image view: UIImageView) {
+    private func prepare(image view: UIImageView) {
         
         view.layer.cornerRadius  = 30
         view.layer.masksToBounds = true
     }
     
-    func toggleAnimations() {
+    private func toggleAnimations() {
         
         if !isStarted
         {
@@ -92,7 +128,19 @@ class TrainingViewController: UIViewController
         }
     }
     
-    func calculateTime(for segmentedControl: UISegmentedControl) -> Double {
+    private func prepareForTraining() {
+        
+        UIView.animate(withDuration: 0.75, delay: 0, options: .curveEaseOut, animations: {
+            
+            self.timeIntervalSegControl.alpha = 0
+            self.startButton.alpha            = 0
+            
+            }, completion: nil)
+        
+        controlPanelStackView.layer.addSublayer(ovalShapeLayer)
+    }
+    
+    private func calculateTime(for segmentedControl: UISegmentedControl) -> Double {
         
         switch segmentedControl.selectedSegmentIndex
         {
@@ -106,7 +154,45 @@ class TrainingViewController: UIViewController
             return 60.0
         }
     }
+    
+    private func addPrepareForTrainingAnimations(to layer: CALayer) {
+        
+        let strokeStartAnimation = CABasicAnimation(keyPath: "strokeStart")
+        
+        strokeStartAnimation.fromValue = -0.5
+        strokeStartAnimation.toValue   = 1.0
+        
+        let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        
+        strokeEndAnimation.fromValue = 0.0
+        strokeEndAnimation.toValue   = 1.0
+        
+        let animationGroup = CAAnimationGroup()
+        
+        animationGroup.duration    = 1
+        animationGroup.repeatCount = 5
+        animationGroup.animations  = [strokeStartAnimation, strokeEndAnimation]
+        animationGroup.delegate    = self
+        
+        animationGroup.setValue(layer, forKeyPath: AnimationConstants.KeyPath.layer)
+        
+        layer.add(animationGroup, forKey: AnimationConstants.AnimKey.prepareForTraning)
+        
+        layersToRemoveArray.append(layer)
+    }
 }
 
+extension TrainingViewController: CAAnimationDelegate
+{
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+        if let layer = anim.value(forKeyPath: AnimationConstants.KeyPath.layer) as? CALayer {
+            
+            if layersToRemoveArray.contains(layer) { layer.removeFromSuperlayer() }
+        }
+        
+    }
+    
+}
 
 

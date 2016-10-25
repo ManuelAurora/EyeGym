@@ -11,10 +11,12 @@
 		641A72D61C676B0C00BBFA86 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A72D51C676B0C00BBFA86 /* TrainingViewController.swift */; };
 		641A72DB1C676B0C00BBFA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641A72DA1C676B0C00BBFA86 /* Assets.xcassets */; };
 		641A72DE1C676B0C00BBFA86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 641A72DC1C676B0C00BBFA86 /* LaunchScreen.storyboard */; };
+		6445E3471DBF897C0004ED65 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445E3461DBF897C0004ED65 /* Helpers.swift */; };
 		644F2C3D1DBA13A70046F5A5 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644F2C3C1DBA13A70046F5A5 /* StartButtonView.swift */; };
 		64505AAB1C6C955900F13531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64505AAA1C6C955900F13531 /* Main.storyboard */; };
 		64505AAD1C6CCA4800F13531 /* InformationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64505AAC1C6CCA4800F13531 /* InformationClass.swift */; };
 		645AB4BA1C6B656A00921705 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645AB4B91C6B656A00921705 /* IntroViewController.swift */; };
+		64A8A6F61DBFAAAE00B5DE62 /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8A6F51DBFAAAE00B5DE62 /* TrainingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +26,12 @@
 		641A72DA1C676B0C00BBFA86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		641A72DD1C676B0C00BBFA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		641A72DF1C676B0C00BBFA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6445E3461DBF897C0004ED65 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		644F2C3C1DBA13A70046F5A5 /* StartButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		64505AAA1C6C955900F13531 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64505AAC1C6CCA4800F13531 /* InformationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationClass.swift; sourceTree = "<group>"; };
 		645AB4B91C6B656A00921705 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		64A8A6F51DBFAAAE00B5DE62 /* TrainingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,9 @@
 				64505AAA1C6C955900F13531 /* Main.storyboard */,
 				641A72D51C676B0C00BBFA86 /* TrainingViewController.swift */,
 				644F2C3C1DBA13A70046F5A5 /* StartButtonView.swift */,
+				64A8A6F51DBFAAAE00B5DE62 /* TrainingData.swift */,
 				64505AAC1C6CCA4800F13531 /* InformationClass.swift */,
+				6445E3461DBF897C0004ED65 /* Helpers.swift */,
 				645AB4B91C6B656A00921705 /* IntroViewController.swift */,
 				641A72DA1C676B0C00BBFA86 /* Assets.xcassets */,
 				641A72DC1C676B0C00BBFA86 /* LaunchScreen.storyboard */,
@@ -147,9 +153,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				641A72D61C676B0C00BBFA86 /* TrainingViewController.swift in Sources */,
+				6445E3471DBF897C0004ED65 /* Helpers.swift in Sources */,
 				64505AAD1C6CCA4800F13531 /* InformationClass.swift in Sources */,
 				644F2C3D1DBA13A70046F5A5 /* StartButtonView.swift in Sources */,
 				641A72D41C676B0C00BBFA86 /* AppDelegate.swift in Sources */,
+				64A8A6F61DBFAAAE00B5DE62 /* TrainingData.swift in Sources */,
 				645AB4BA1C6B656A00921705 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
