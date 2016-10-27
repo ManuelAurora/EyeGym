@@ -10,15 +10,18 @@ import UIKit
 
 class OvalShapeLayer: CAShapeLayer
 {
+    
     private let radius: CGFloat = 40
     
     init(point: CGPoint) {
         super.init()
         
-        strokeColor     = UIColor.orange.cgColor
+        let color = UIColor(colorLiteralRed: 255/255, green: 204/255, blue: 102/255, alpha: 1.0).cgColor
+        
+        strokeColor     = color
         fillColor       = UIColor.clear.cgColor
-        lineDashPattern = [2, 3]
-        lineWidth       = 4
+        lineDashPattern = [4, 3]
+        lineWidth       = 6
         
         path = UIBezierPath(
             ovalIn: CGRect(

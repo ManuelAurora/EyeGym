@@ -13,6 +13,18 @@ class TrainingViewController: UIViewController
 {
     private let maxDistance: CGFloat = 150
     
+    private var isStarted = false {
+        didSet {
+            isStarted ? prepareForTraining() : stopTraining()
+        }
+    }
+    
+    private var traningPreparationSpinner: OvalShapeLayer? {
+        didSet {
+            controlPanelStackView.layer.addSublayer(traningPreparationSpinner!)
+        }
+    }
+    
     var requestedTimer: Double {
         
         switch timeIntervalSegControl.selectedSegmentIndex
@@ -32,11 +44,12 @@ class TrainingViewController: UIViewController
     
     @IBAction func stopTraining(_ sender: UITapGestureRecognizer) {
         
+        isStarted = false
     }
     
     @IBAction func start() {
         
-        prepareForTraining()
+        isStarted = true
     }
        
     override func viewDidLayoutSubviews() {
@@ -45,13 +58,27 @@ class TrainingViewController: UIViewController
         startButton.textForMask = "Start"
     }
     
+    private func stopTraining() {
+        
+        leftImage.layer.removeAllAnimations()
+        rightImage.layer.removeAllAnimations()
+        
+        traningPreparationSpinner?.removeFromSuperlayer()
+        
+        UIView.animate(withDuration: 0.7) {
+            self.startButton.alpha            = 1
+            self.timeIntervalSegControl.alpha = 1
+        }
+
+    }
+    
     private func prepareForTraining() {
         
         let point = CGPoint(
             x: controlPanelStackView.bounds.width / 2,
             y: controlPanelStackView.bounds.height / 2)
         
-        controlPanelStackView.layer.addSublayer(OvalShapeLayer(point: point))
+        traningPreparationSpinner = OvalShapeLayer(point: point)
         
         UIView.animate(withDuration: 0.7) {
             self.startButton.alpha            = 0
@@ -59,6 +86,8 @@ class TrainingViewController: UIViewController
         }
         
         delay(seconds: 5) {
+            guard self.isStarted else { return }
+            
             self.leftImage.animate(with: self.requestedTimer, direction: .left, distance: self.maxDistance)
             self.rightImage.animate(with: self.requestedTimer, direction: .right, distance: self.maxDistance)
         }

@@ -24,12 +24,15 @@ class StartButton: UIButton
         
         let layer = CAGradientLayer()
         
+        let color = UIColor(colorLiteralRed: 255/255, green: 204/255, blue: 102/255, alpha: 1.0).cgColor
+        
         let locations = [0.25, 0.50, 0.75]
         let colors    = [
-            UIColor.darkGray.cgColor,
+            color,
             UIColor.white.cgColor,
-            UIColor.darkGray.cgColor
+            color
         ]
+        
         
         layer.startPoint = CGPoint(x: 0, y: 0.5)
         layer.endPoint   = CGPoint(x: 1.0, y: 0.5)
