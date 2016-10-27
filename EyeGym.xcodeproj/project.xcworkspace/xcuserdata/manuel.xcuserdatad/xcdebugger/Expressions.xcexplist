@@ -20,6 +20,9 @@
                value = "view.frame.height">
             </PersistentString>
             <PersistentString
+               value = "trainingViewModel.trainingData.isStarted">
+            </PersistentString>
+            <PersistentString
                value = "view.frame.width">
             </PersistentString>
          </PersistentStrings>

@@ -22,34 +22,15 @@
                                 <frame key="frameInset" minX="-1" minY="62" width="667" height="311"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press Start to begin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFe-O5-REy">
-                                <frame key="frameInset" minX="258" minY="43" width="152" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHc-6L-Rle">
-                                <frame key="frameInset" minX="9" minY="317" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.84619204110000001" blue="0.6788560911" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="About"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-RZ-iKq">
-                                <frame key="frameInset" minX="568" minY="320" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.84619204110000001" blue="0.6788560911" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="How To Use"/>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-2S-cZR">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-Vl-Cmn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-Vl-Cmn" customClass="TrainingObjectView" customModule="EyeGym" customModuleProvider="target">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="0gO-Oa-1oM"/>
                                             <constraint firstAttribute="width" constant="60" id="YqB-Cx-h3Z"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="2P5-Rl-nnQ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="2P5-Rl-nnQ" customClass="TrainingObjectView" customModule="EyeGym" customModuleProvider="target">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Tqh-z7-goK"/>
                                             <constraint firstAttribute="height" constant="60" id="jKp-ct-wqZ"/>
@@ -60,11 +41,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-d3-Rdz">
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
+                                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <segments>
                                             <segment title="01:00"/>
                                             <segment title="01:30"/>
                                             <segment title="02:00"/>
                                         </segments>
+                                        <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK" customClass="StartButton" customModule="EyeGym" customModuleProvider="target">
                                         <connections>
@@ -88,17 +71,11 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="gPk-41-5Y6"/>
-                                <exclude reference="vFe-O5-REy"/>
-                                <exclude reference="iHc-6L-Rle"/>
-                                <exclude reference="Vd0-RZ-iKq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="subviews">
                                 <include reference="gPk-41-5Y6"/>
-                                <include reference="vFe-O5-REy"/>
-                                <include reference="iHc-6L-Rle"/>
-                                <include reference="Vd0-RZ-iKq"/>
                             </mask>
                         </variation>
                         <connections>
@@ -107,8 +84,8 @@
                     </view>
                     <connections>
                         <outlet property="controlPanelStackView" destination="qy1-d3-Rdz" id="bup-qO-zwd"/>
-                        <outlet property="leftImage" destination="cK6-Vl-Cmn" id="3rT-kP-Vrz"/>
-                        <outlet property="rightImage" destination="2P5-Rl-nnQ" id="cGa-Mg-GYc"/>
+                        <outlet property="leftImage" destination="cK6-Vl-Cmn" id="Uc2-DT-Oab"/>
+                        <outlet property="rightImage" destination="2P5-Rl-nnQ" id="QIy-G6-LUT"/>
                         <outlet property="startButton" destination="hOl-xZ-zZK" id="adS-zw-sPS"/>
                         <outlet property="timeIntervalSegControl" destination="Zsv-l6-iQU" id="Fk7-hc-bWt"/>
                     </connections>

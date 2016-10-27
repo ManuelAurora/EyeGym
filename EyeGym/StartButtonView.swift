@@ -20,7 +20,6 @@ class StartButton: UIButton
         }
     }
     
-    
     let gradientLayer: CAGradientLayer = {
         
         let layer = CAGradientLayer()

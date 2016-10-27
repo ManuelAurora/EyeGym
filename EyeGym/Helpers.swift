@@ -18,14 +18,15 @@ func delay(seconds: Double, completion: @escaping () -> ()) {
 }
 
 struct AnimationConstants
-{
-    struct AnimKey
-    {
-        static let prepareForTraning = "PrepareForTrainingAnimationKey"
-    }
-    
+{    
     struct KeyPath
     {
         static let layer = "LayerToRemove"
     }
+}
+
+enum Direction
+{
+    case left
+    case right
 }
