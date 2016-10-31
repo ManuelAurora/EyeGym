@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="space" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-41-5Y6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-41-5Y6">
                                 <frame key="frameInset" minX="-1" minY="62" width="667" height="311"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-2S-cZR">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-Vl-Cmn" customClass="TrainingObjectView" customModule="EyeGym" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-Vl-Cmn" customClass="TrainingObjectView" customModule="EyeGym" customModuleProvider="target">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="0gO-Oa-1oM"/>
                                             <constraint firstAttribute="width" constant="60" id="YqB-Cx-h3Z"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="2P5-Rl-nnQ" customClass="TrainingObjectView" customModule="EyeGym" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2P5-Rl-nnQ" customClass="TrainingObjectView" customModule="EyeGym" customModuleProvider="target">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Tqh-z7-goK"/>
                                             <constraint firstAttribute="height" constant="60" id="jKp-ct-wqZ"/>
@@ -84,6 +84,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="gPk-41-5Y6" id="IiR-Ld-3IJ"/>
                         <outlet property="controlPanelStackView" destination="qy1-d3-Rdz" id="bup-qO-zwd"/>
                         <outlet property="leftImage" destination="cK6-Vl-Cmn" id="Uc2-DT-Oab"/>
                         <outlet property="rightImage" destination="2P5-Rl-nnQ" id="QIy-G6-LUT"/>
@@ -145,8 +146,4 @@
             <point key="canvasLocation" x="813" y="475"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="earth" width="86" height="86"/>
-        <image name="space" width="1760" height="1100"/>
-    </resources>
 </document>

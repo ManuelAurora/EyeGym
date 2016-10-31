@@ -7,14 +7,13 @@
 //
 
 import Foundation
-
+import UIKit
 
 func delay(seconds: Double, completion: @escaping () -> ()) {
     
     let popTime =  DispatchTime.now() + seconds
     
-    DispatchQueue.main.asyncAfter(deadline: popTime, execute: completion)
-    
+    DispatchQueue.main.asyncAfter(deadline: popTime, execute: completion)    
 }
 
 struct AnimationConstants
@@ -30,3 +29,20 @@ enum Direction
     case left
     case right
 }
+
+enum AssetID: String
+{
+    case earth
+    case space 
+}
+
+
+
+
+
+
+
+
+
+
+    

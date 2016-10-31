@@ -9,8 +9,13 @@
 import UIKit
 
 
-class TrainingViewController: UIViewController
+class TrainingViewController: UIViewController, SegueHandlerType
 {
+    enum SegueID: String
+    {
+        case InstructionsViewController
+    }
+    
     private let maxDistance: CGFloat = 150
     
     private var isStarted = false {
@@ -36,6 +41,7 @@ class TrainingViewController: UIViewController
         }
     }
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var rightImage:             TrainingObjectView!
     @IBOutlet weak var leftImage:              TrainingObjectView!
     @IBOutlet weak var startButton:            StartButton!
@@ -51,12 +57,19 @@ class TrainingViewController: UIViewController
         
         isStarted = true
     }
-       
+    
+    override func viewDidLoad() {
+        
+        leftImage.image           = UIImage(withAsset: .earth)
+        rightImage.image          = UIImage(withAsset: .earth)
+        backgroundImageView.image = UIImage(withAsset: .space)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-      
+       
         startButton.textForMask = "Start"
-    }
+    }    
     
     private func stopTraining() {
         
