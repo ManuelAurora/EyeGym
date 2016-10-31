@@ -71,6 +71,14 @@ class TrainingViewController: UIViewController, SegueHandlerType
         startButton.textForMask = "Start"
     }    
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let controller = storyboard!.instantiateViewController(withIdentifier: .IntroductionVC)
+        
+        present(controller, animated: true, completion: nil)
+    }
+    
     private func stopTraining() {
         
         leftImage.layer.removeAllAnimations()

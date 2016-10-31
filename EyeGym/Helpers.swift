@@ -24,6 +24,12 @@ struct AnimationConstants
     }
 }
 
+//View Controller Identififers
+public enum StoryboardVCID: String
+{
+    case IntroductionVC
+}
+
 enum Direction
 {
     case left
@@ -33,7 +39,7 @@ enum Direction
 enum AssetID: String
 {
     case earth
-    case space 
+    case space
 }
 
 

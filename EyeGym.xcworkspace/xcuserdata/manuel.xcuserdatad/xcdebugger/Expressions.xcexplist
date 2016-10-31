@@ -3,18 +3,34 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "instructionsController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "OvalShapeLayer.init(point : CGPoint) -&gt; OvalShapeLayer:OvalShapeLayer.swift">
          <PersistentStrings>
             <PersistentString
                value = "superlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dimmingView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "IntroductionViewController.next(UIButton) -&gt; ():IntroductionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " presentedViewController!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "instructionsController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

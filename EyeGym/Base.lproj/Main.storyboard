@@ -101,49 +101,46 @@
             </objects>
             <point key="canvasLocation" x="2345.577211394303" y="472.80000000000001"/>
         </scene>
-        <!--Intro View Controller-->
-        <scene sceneID="x5R-ch-6xF">
+        <!--Introduction View Controller-->
+        <scene sceneID="DQv-up-bID">
             <objects>
-                <viewController storyboardIdentifier="Intro" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gik-oT-Xf1" customClass="IntroViewController" customModule="EyeGym" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroductionVC" id="VVA-uz-2Oe" customClass="IntroductionViewController" customModule="EyeGym" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fWB-Vh-NML"/>
-                        <viewControllerLayoutGuide type="bottom" id="14m-Uy-f3M"/>
+                        <viewControllerLayoutGuide type="top" id="hlF-UM-78d"/>
+                        <viewControllerLayoutGuide type="bottom" id="E8o-bv-qUw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hoq-Hv-ZlO">
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="XUK-5a-dxu">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70H-fl-xpY">
-                                <frame key="frameInset" width="400" height="387"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XoW-RS-tgb" userLabel="Introduction View">
+                                <frame key="frameInset" minX="133" minY="37" width="400" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oD4-ig-ybj">
-                                <frame key="frameInset" minY="395" width="400" height="205"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6K-Fg-oGh">
+                                        <frame key="frameInset" minX="343" minY="286" width="49" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Next" backgroundImage="nextButton"/>
+                                        <connections>
+                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="5rO-Xc-AO9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="70H-fl-xpY"/>
-                                <exclude reference="oD4-ig-ybj"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="70H-fl-xpY"/>
-                                <include reference="oD4-ig-ybj"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="introductionView" destination="XoW-RS-tgb" id="HCL-ZD-wMl"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qo5-g1-XcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6b-K6-9H1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813" y="475"/>
+            <point key="canvasLocation" x="2346.4767616191907" y="1160.8"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nextButton" width="11" height="24"/>
+    </resources>
 </document>
