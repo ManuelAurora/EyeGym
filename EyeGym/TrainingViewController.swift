@@ -55,9 +55,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     @IBAction func showIntro(_ sender: UIButton) {
         
-        let introController = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
-        
-        present(introController, animated: true, completion: nil)
+        showIntroductionView()
     }
     
     override func viewDidLoad() {
@@ -79,18 +77,24 @@ class TrainingViewController: UIViewController, SegueHandlerType
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        
         let defaults = UserDefaults()
         
         let introWasShown = defaults.bool(forKey: UserDefaultsKeys.wasShown.rawValue)
         
         if !introWasShown
         {
-            let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
+            showIntroductionView()
             
             defaults.set(true, forKey: UserDefaultsKeys.wasShown.rawValue)
-            
-            present(controller, animated: true, completion: nil)
         }
+    }
+    
+    private func showIntroductionView() {
+        
+        let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
+        
+        present(controller, animated: true, completion: nil)
     }
     
     private func stopTraining() {
