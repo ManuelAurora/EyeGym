@@ -33,7 +33,7 @@ struct AnimationConstants
 
 enum UserDefaultsKeys: String
 {
-    case isFirstLaunch
+    case wasShown
 }
 
 //View Controller Identififers

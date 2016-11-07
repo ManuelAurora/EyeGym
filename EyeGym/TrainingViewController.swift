@@ -80,13 +80,14 @@ class TrainingViewController: UIViewController, SegueHandlerType
         super.viewDidAppear(animated)
         
         let defaults = UserDefaults()
-        let isFirstLaunch = defaults.bool(forKey: UserDefaultsKeys.isFirstLaunch.rawValue)
         
-        if isFirstLaunch
+        let introWasShown = defaults.bool(forKey: UserDefaultsKeys.wasShown.rawValue)
+        
+        if !introWasShown
         {
             let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
             
-            defaults.set(true, forKey: UserDefaultsKeys.isFirstLaunch.rawValue)
+            defaults.set(true, forKey: UserDefaultsKeys.wasShown.rawValue)
             
             present(controller, animated: true, completion: nil)
         }
