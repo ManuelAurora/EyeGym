@@ -11,7 +11,7 @@ import UIKit
 
 class TrainingViewController: UIViewController, SegueHandlerType
 {
-    enum SegueID: String
+    internal enum SegueID: String
     {
         case InstructionsViewController
     }
@@ -30,7 +30,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
     
-    var requestedTimer: Double {
+    private var requestedTimer: Double {
         
         switch timeIntervalSegControl.selectedSegmentIndex
         {
@@ -41,21 +41,23 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var infoButton:             UIButton!
+    @IBOutlet weak var backgroundImageView:    UIImageView!
     @IBOutlet weak var rightImage:             TrainingObjectView!
     @IBOutlet weak var leftImage:              TrainingObjectView!
     @IBOutlet weak var startButton:            StartButton!
     @IBOutlet weak var controlPanelStackView:  UIStackView!
     @IBOutlet weak var timeIntervalSegControl: UISegmentedControl!
     
-    @IBAction func stopTraining(_ sender: UITapGestureRecognizer) {
-        
-        isStarted = false
-    }
+    @IBAction func stopTraining(_ sender: UITapGestureRecognizer) { isStarted = false }
     
-    @IBAction func start() {
+    @IBAction func start() { isStarted = true }
+    
+    @IBAction func showIntro(_ sender: UIButton) {
         
-        isStarted = true
+        let introController = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
+        
+        present(introController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -63,6 +65,9 @@ class TrainingViewController: UIViewController, SegueHandlerType
         leftImage.image           = UIImage(withAsset: .earth)
         rightImage.image          = UIImage(withAsset: .earth)
         backgroundImageView.image = UIImage(withAsset: .space)
+        
+        infoButton.tintColor             = view.tintColor
+        timeIntervalSegControl.tintColor = view.tintColor
     }
     
     override func viewDidLayoutSubviews() {
@@ -74,7 +79,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let controller = storyboard!.instantiateViewController(withIdentifier: .IntroductionVC)
+        let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
         
         present(controller, animated: true, completion: nil)
     }

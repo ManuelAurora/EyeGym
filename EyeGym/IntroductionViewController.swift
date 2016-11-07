@@ -17,6 +17,8 @@ class IntroductionViewController: UIViewController
     @IBOutlet weak var nextButton:       UIButton!
     @IBOutlet weak var introductionView: IntroductionView!
     
+    @IBAction func closeIntroView(_ sender: UIButton) {  dismiss(animated: true, completion: nil) }
+    
     @IBAction func next(_ sender: UIButton) {
         
         if canCloseIntroView
@@ -25,6 +27,7 @@ class IntroductionViewController: UIViewController
         }
         else
         {
+            animateTransition() // hides intro view before text and picture is changed
             introductionView.textView.text = introductionViewModel.nextPageText()
         }
     }
@@ -32,7 +35,8 @@ class IntroductionViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.clear
+        view.backgroundColor = .clear
+        nextButton.tintColor = .black
         
         configureIntroView()
         subscribeNotifications()
@@ -54,12 +58,33 @@ class IntroductionViewController: UIViewController
     
     private func subscribeNotifications() {
         
+        //if intro view has reached last page - we can close window
         NotificationCenter.default.addObserver(
             forName: NSNotification.Name(rawValue: ViewModelNotificationNames.lastIntroPageDidAppear.rawValue),
             object: nil,
             queue: nil) { _ in
                 self.nextButton.setTitle("Close", for: .normal)
                 self.canCloseIntroView = true
+        }
+    }
+    
+    private func animateTransition() {
+        
+        UIView.transition(with: introductionView,
+                          duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            
+                self.introductionView.isHidden = true
+        }) { _ in
+            
+            UIView.transition(with: self.introductionView,
+                              duration: 0.4,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                
+                self.introductionView.isHidden = false
+                }, completion: nil)
         }
     }
 }

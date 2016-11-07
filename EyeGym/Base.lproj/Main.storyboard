@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,13 +62,21 @@
                                 </constraints>
                                 <variation key="widthClass=compact" axis="vertical"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msk-rW-wcy">
+                                <connections>
+                                    <action selector="showIntro:" destination="o60-NY-vr9" eventType="touchUpInside" id="NM4-cu-Whp"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="aNn-2S-cZR" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="Ezy-bt-DPm"/>
                             <constraint firstItem="aNn-2S-cZR" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="Jzx-kL-KkO"/>
                             <constraint firstItem="qy1-d3-Rdz" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="aV2-K3-1ID"/>
                             <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="qy1-d3-Rdz" secondAttribute="bottom" constant="25" id="bAg-Sx-LOY"/>
+                            <constraint firstItem="Msk-rW-wcy" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leadingMargin" id="n6a-hF-VJx"/>
+                            <constraint firstItem="Msk-rW-wcy" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="42" id="ogz-Dd-63D"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -86,6 +95,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="gPk-41-5Y6" id="IiR-Ld-3IJ"/>
                         <outlet property="controlPanelStackView" destination="qy1-d3-Rdz" id="bup-qO-zwd"/>
+                        <outlet property="infoButton" destination="Msk-rW-wcy" id="JaB-hm-9Ye"/>
                         <outlet property="leftImage" destination="cK6-Vl-Cmn" id="Uc2-DT-Oab"/>
                         <outlet property="rightImage" destination="2P5-Rl-nnQ" id="QIy-G6-LUT"/>
                         <outlet property="startButton" destination="hOl-xZ-zZK" id="adS-zw-sPS"/>
@@ -104,7 +114,7 @@
         <!--Introduction View Controller-->
         <scene sceneID="DQv-up-bID">
             <objects>
-                <viewController storyboardIdentifier="IntroductionVC" id="VVA-uz-2Oe" customClass="IntroductionViewController" customModule="EyeGym" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introductionVC" id="VVA-uz-2Oe" customClass="IntroductionViewController" customModule="EyeGym" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hlF-UM-78d"/>
                         <viewControllerLayoutGuide type="bottom" id="E8o-bv-qUw"/>
@@ -115,6 +125,26 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNj-ia-la1" userLabel="Introduction View" customClass="IntroductionView" customModule="EyeGym" customModuleProvider="target">
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-YC-0pr">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="K6N-XO-lQE"/>
+                                        </constraints>
+                                        <state key="normal" title="Next" backgroundImage="nextButton"/>
+                                        <connections>
+                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="yUo-9J-fN9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Ey-W3v">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2Sv-R3-ltc"/>
+                                            <constraint firstAttribute="width" constant="40" id="3iG-ye-j8f"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="closeButton"/>
+                                        <connections>
+                                            <action selector="closeIntroView:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="WPU-gY-cgo"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Bd-E5w">
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="743" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-OX-2Qm">
@@ -125,26 +155,19 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-qS-saO"/>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-YC-0pr">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="49" id="K6N-XO-lQE"/>
-                                        </constraints>
-                                        <state key="normal" title="Next" backgroundImage="nextButton"/>
-                                        <connections>
-                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="yUo-9J-fN9"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="5cw-rf-s8z"/>
                                     <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="9" id="6Lq-gy-AxA"/>
+                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="8" id="C1A-hM-akX"/>
                                     <constraint firstItem="z0e-Bd-E5w" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="20" id="DgN-Gr-lo2"/>
                                     <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="8" id="IcX-hR-6a5"/>
-                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="35" id="VXf-sH-xKn"/>
-                                    <constraint firstItem="LNc-YC-0pr" firstAttribute="top" secondItem="z0e-Bd-E5w" secondAttribute="bottom" constant="37" id="YlY-AA-4VH"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="56" id="VXf-sH-xKn"/>
+                                    <constraint firstItem="LNc-YC-0pr" firstAttribute="top" secondItem="z0e-Bd-E5w" secondAttribute="bottom" constant="16" id="YlY-AA-4VH"/>
                                     <constraint firstAttribute="trailing" secondItem="z0e-Bd-E5w" secondAttribute="trailing" constant="20" id="p4p-dj-UiN"/>
                                     <constraint firstAttribute="height" constant="320" id="t9e-Zb-Mmx"/>
+                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="8" id="zdq-ou-IaV"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="PIP-qS-saO" id="Nnn-ab-9kS"/>
@@ -154,6 +177,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mNj-ia-la1" firstAttribute="centerY" secondItem="XUK-5a-dxu" secondAttribute="centerY" id="IaQ-T1-Fi2"/>
                             <constraint firstItem="mNj-ia-la1" firstAttribute="centerX" secondItem="XUK-5a-dxu" secondAttribute="centerX" id="QCU-wk-NzE"/>
@@ -170,6 +194,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeButton" width="15" height="15"/>
         <image name="nextButton" width="11" height="24"/>
     </resources>
 </document>
