@@ -79,9 +79,17 @@ class TrainingViewController: UIViewController, SegueHandlerType
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
+        let defaults = UserDefaults()
+        let isFirstLaunch = defaults.bool(forKey: UserDefaultsKeys.isFirstLaunch.rawValue)
         
-        present(controller, animated: true, completion: nil)
+        if isFirstLaunch
+        {
+            let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
+            
+            defaults.set(true, forKey: UserDefaultsKeys.isFirstLaunch.rawValue)
+            
+            present(controller, animated: true, completion: nil)
+        }
     }
     
     private func stopTraining() {

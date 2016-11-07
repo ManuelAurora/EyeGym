@@ -29,6 +29,13 @@ struct AnimationConstants
     }
 }
 
+//NSUserDefaults keys
+
+enum UserDefaultsKeys: String
+{
+    case isFirstLaunch
+}
+
 //View Controller Identififers
 public enum StoryboardVCID: String
 {
