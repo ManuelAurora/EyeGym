@@ -91,24 +91,29 @@ class TrainingViewController: UIViewController, SegueHandlerType
         
         traningPreparationSpinner?.removeFromSuperlayer()
         
+        toggleControlsHiding()
+    }
+    
+    private func toggleControlsHiding() {
+        
+        let value: CGFloat = isStarted ? 0 : 1
+        
         UIView.animate(withDuration: 0.7) {
-            self.startButton.alpha            = 1
-            self.timeIntervalSegControl.alpha = 1
+            self.infoButton.alpha             = value
+            self.startButton.alpha            = value
+            self.timeIntervalSegControl.alpha = value
         }
     }
     
     private func prepareForTraining() {
+        
+        toggleControlsHiding()
         
         let point = CGPoint(
             x: controlPanelStackView.bounds.width / 2,
             y: controlPanelStackView.bounds.height / 2)
         
         traningPreparationSpinner = OvalShapeLayer(point: point)
-        
-        UIView.animate(withDuration: 0.7) {
-            self.startButton.alpha            = 0
-            self.timeIntervalSegControl.alpha = 0
-        }
         
         delay(seconds: 5) {
             guard self.isStarted else { return }
