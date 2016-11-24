@@ -229,7 +229,7 @@
 				TargetAttributes = {
 					641A72CF1C676B0C00BBFA86 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 99MX98QF2R;
+						DevelopmentTeam = 2FNB386G38;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -439,15 +439,17 @@
 			baseConfigurationReference = 52061FFFA13019DA73CAB8DF /* Pods-EyeGym.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = 2FNB386G38;
 				INFOPLIST_FILE = EyeGym/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AM.EyeGym;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aurorainterplay.EyeGym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,15 +458,17 @@
 			baseConfigurationReference = FCAAA8A48C541251652FA904 /* Pods-EyeGym.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 2FNB386G38;
 				INFOPLIST_FILE = EyeGym/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AM.EyeGym;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aurorainterplay.EyeGym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -3,6 +3,38 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "TrainingViewController.toggleControlsHiding() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isStarted">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dimmingView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingObjectView.animationDidStop(CAAnimation, finished : Bool) -&gt; ():TrainingObjectView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.layer.frame.origin">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "instructionsController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "OvalShapeLayer.init(point : CGPoint) -&gt; OvalShapeLayer:OvalShapeLayer.swift">
          <PersistentStrings>
             <PersistentString
@@ -19,26 +51,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "dimmingView.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "IntroductionViewController.next(UIButton) -&gt; ():IntroductionViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = " presentedViewController!">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "instructionsController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

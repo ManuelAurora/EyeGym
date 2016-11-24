@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class TrainingViewController: UIViewController, SegueHandlerType
 {
     internal enum SegueID: String
@@ -18,7 +17,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     private let maxDistance: CGFloat = 150
     
-    private var isStarted = false {
+    fileprivate var isStarted = false {
         didSet {
             isStarted ? prepareForTraining() : stopTraining()
         }
@@ -34,9 +33,9 @@ class TrainingViewController: UIViewController, SegueHandlerType
         
         switch timeIntervalSegControl.selectedSegmentIndex
         {
-        case 0: return 60.0
-        case 1: return 90.0
-        case 2: return 120.0
+        case 0:  return 60.0
+        case 1:  return 90.0
+        case 2:  return 120.0
         default: return 60.0
         }
     }
@@ -64,6 +63,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
         rightImage.image          = UIImage(withAsset: .earth)
         backgroundImageView.image = UIImage(withAsset: .space)
         
+        leftImage.animationDelegate      = self
+        rightImage.animationDelegate     = self
         infoButton.tintColor             = view.tintColor
         timeIntervalSegControl.tintColor = view.tintColor
     }
@@ -76,7 +77,6 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         
         let defaults = UserDefaults()
         
@@ -97,6 +97,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         present(controller, animated: true, completion: nil)
     }
     
+    //Triggered by bool property isStarted
     private func stopTraining() {
         
         leftImage.layer.removeAllAnimations()
@@ -118,6 +119,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
     
+    //Triggered by bool property isStarted
     private func prepareForTraining() {
         
         toggleControlsHiding()
@@ -136,6 +138,16 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
 }
+
+extension TrainingViewController: CAAnimationDelegate
+{
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+        isStarted = false
+    }
+}
+
+
 
 
 

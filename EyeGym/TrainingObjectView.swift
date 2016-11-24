@@ -10,7 +10,14 @@ import UIKit
 
 class TrainingObjectView: UIImageView {
     
+    var animationDelegate: CAAnimationDelegate?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func didMoveToSuperview() {
+        
         layer.cornerRadius  = 30
         layer.masksToBounds = true
     }
@@ -19,15 +26,22 @@ class TrainingObjectView: UIImageView {
         
         let movePic          = CABasicAnimation(keyPath: "transform")
         let startedTransform = layer.transform
-        let value: CGFloat = direction == .left ? -distance : distance
+        let value: CGFloat   = direction == .left ? -distance : distance
+        
+        if let delegate = animationDelegate
+        {
+            movePic.delegate = delegate
+        }
         
         movePic.fromValue = startedTransform
         movePic.toValue   = NSValue(caTransform3D: CATransform3DMakeTranslation(value, 0, 0))
-        movePic.duration  = time
+        movePic.duration  = time        
+        movePic.fillMode  = kCAFillModeForwards
+        movePic.isRemovedOnCompletion = false
         
-        layer.add(movePic, forKey: nil)        
+        layer.add(movePic, forKey: nil)
+        
         layer.transform = startedTransform
     }
-    
-    
 }
+

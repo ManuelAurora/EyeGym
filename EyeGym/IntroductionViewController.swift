@@ -53,6 +53,7 @@ class IntroductionViewController: UIViewController
         
         introductionView.alpha              = 1.0
         introductionView.layer.cornerRadius = 10
+        introductionView.imageView.image    = UIImage(withAsset: .group)
         introductionView.textView.text      = introductionViewModel.firstPageText()
     }
     

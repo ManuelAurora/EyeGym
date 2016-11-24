@@ -22,7 +22,12 @@ enum ViewModelNotificationNames: String
 }
 
 struct AnimationConstants
-{    
+{
+    struct Keys
+    {
+        static let trainingAnimation = "TrainingAnimation"
+    }
+    
     struct KeyPath
     {
         static let layer = "LayerToRemove"
@@ -30,7 +35,6 @@ struct AnimationConstants
 }
 
 //NSUserDefaults keys
-
 enum UserDefaultsKeys: String
 {
     case wasShown
@@ -53,6 +57,7 @@ enum AssetID: String
     case earth
     case space
     case closeButton
+    case group
 }
 
 

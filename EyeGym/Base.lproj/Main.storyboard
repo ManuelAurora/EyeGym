@@ -19,10 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-41-5Y6">
-                                <frame key="frameInset" minX="-1" minY="62" width="667" height="311"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-41-5Y6"/>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-2S-cZR">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-Vl-Cmn" customClass="TrainingObjectView" customModule="EyeGym" customModuleProvider="target">
@@ -73,10 +70,14 @@
                         <constraints>
                             <constraint firstItem="aNn-2S-cZR" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="Ezy-bt-DPm"/>
                             <constraint firstItem="aNn-2S-cZR" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="Jzx-kL-KkO"/>
+                            <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="gPk-41-5Y6" secondAttribute="bottom" id="ScX-IB-f8P"/>
                             <constraint firstItem="qy1-d3-Rdz" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="aV2-K3-1ID"/>
+                            <constraint firstItem="gPk-41-5Y6" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leading" id="b25-8A-UAb"/>
                             <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="qy1-d3-Rdz" secondAttribute="bottom" constant="25" id="bAg-Sx-LOY"/>
+                            <constraint firstItem="gPk-41-5Y6" firstAttribute="top" secondItem="xMd-vq-Txt" secondAttribute="top" id="bOf-Vp-qMd"/>
                             <constraint firstItem="Msk-rW-wcy" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leadingMargin" id="n6a-hF-VJx"/>
                             <constraint firstItem="Msk-rW-wcy" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="42" id="ogz-Dd-63D"/>
+                            <constraint firstAttribute="trailing" secondItem="gPk-41-5Y6" secondAttribute="trailing" id="v9U-Ze-IEm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -145,14 +146,18 @@
                                             <action selector="closeIntroView:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="WPU-gY-cgo"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Bd-E5w">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Bd-E5w">
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="743" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-OX-2Qm">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="738" verticalCompressionResistancePriority="742" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-OX-2Qm">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-qS-saO"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="255" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-qS-saO">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="myg-UG-hqZ"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -160,14 +165,14 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="5cw-rf-s8z"/>
                                     <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="9" id="6Lq-gy-AxA"/>
-                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="8" id="C1A-hM-akX"/>
+                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" id="C1A-hM-akX"/>
                                     <constraint firstItem="z0e-Bd-E5w" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="20" id="DgN-Gr-lo2"/>
                                     <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="8" id="IcX-hR-6a5"/>
-                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="56" id="VXf-sH-xKn"/>
-                                    <constraint firstItem="LNc-YC-0pr" firstAttribute="top" secondItem="z0e-Bd-E5w" secondAttribute="bottom" constant="16" id="YlY-AA-4VH"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="48" id="VXf-sH-xKn"/>
+                                    <constraint firstItem="LNc-YC-0pr" firstAttribute="top" secondItem="z0e-Bd-E5w" secondAttribute="bottom" constant="24" id="YlY-AA-4VH"/>
                                     <constraint firstAttribute="trailing" secondItem="z0e-Bd-E5w" secondAttribute="trailing" constant="20" id="p4p-dj-UiN"/>
                                     <constraint firstAttribute="height" constant="320" id="t9e-Zb-Mmx"/>
-                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="8" id="zdq-ou-IaV"/>
+                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" id="zdq-ou-IaV"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="PIP-qS-saO" id="Nnn-ab-9kS"/>
