@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit //Used only for UIImage, do not use this framework for somthing else here!
 
 class IntroductionPageViewModel
 {
@@ -35,29 +36,48 @@ class IntroductionPageViewModel
         ]
     }()
     
-    func firstPageText() -> String {
+    func firstPageData() -> (text: String?, image: UIImage?) {
         
-        return introductionPages.first!.text
-    }
+        return (introductionPages.first?.text, introductionPages.first?.image)
+    }    
     
-    func nextPageText() -> String {
+    func nextPageData() -> (text: String?, image: UIImage?) {
         
-        guard currentPage < introductionPages.count else { currentPage = 1; return introductionPages.first!.text }
+        guard currentPage < introductionPages.count else {
+            
+            currentPage = 1; return (introductionPages.first?.text, introductionPages.first?.image)
+        }
         
         currentPage += 1
         
-        return introductionPages[currentPage - 1].text
+        return (introductionPages[currentPage - 1].text, introductionPages[currentPage - 1].image)
     }
     
     private class func fillPagesArray() -> [IntroductionPage] {
         
-        var pages = [IntroductionPage]()
+        var firstPage  = IntroductionPage(with: textsForPages.first!)
+        var secondPage = IntroductionPage(with: textsForPages[1])
+        let thirdPage  = IntroductionPage(with: textsForPages[2])
         
-        for text in textsForPages
-        {
-            pages.append(IntroductionPage(with: text))
-        }
-        
-        return pages
+        firstPage.image  = UIImage(withAsset: .closeObjectLook)
+        secondPage.image = UIImage(withAsset: .farObjectLook)
+                
+        return [firstPage, secondPage, thirdPage]
     }    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

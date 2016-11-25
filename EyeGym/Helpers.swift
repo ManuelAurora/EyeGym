@@ -57,7 +57,8 @@ enum AssetID: String
     case earth
     case space
     case closeButton
-    case group
+    case closeObjectLook
+    case farObjectLook
 }
 
 

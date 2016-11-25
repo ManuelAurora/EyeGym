@@ -19,6 +19,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "IntroductionPageViewModel.nextPageData() -&gt; (text : String?, image : UIImage?):IntroductionPageViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentPage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TrainingObjectView.animationDidStop(CAAnimation, finished : Bool) -&gt; ():TrainingObjectView.swift">
          <PersistentStrings>
             <PersistentString

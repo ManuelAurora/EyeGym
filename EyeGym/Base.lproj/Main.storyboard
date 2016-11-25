@@ -126,19 +126,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNj-ia-la1" userLabel="Introduction View" customClass="IntroductionView" customModule="EyeGym" customModuleProvider="target">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-YC-0pr">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="49" id="K6N-XO-lQE"/>
-                                        </constraints>
-                                        <state key="normal" title="Next" backgroundImage="nextButton"/>
-                                        <connections>
-                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="yUo-9J-fN9"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Ey-W3v">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="2Sv-R3-ltc"/>
-                                            <constraint firstAttribute="width" constant="40" id="3iG-ye-j8f"/>
+                                            <constraint firstAttribute="height" constant="31" id="2Sv-R3-ltc"/>
+                                            <constraint firstAttribute="width" constant="37" id="3iG-ye-j8f"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="closeButton"/>
@@ -146,16 +137,27 @@
                                             <action selector="closeIntroView:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="WPU-gY-cgo"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Bd-E5w">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-YC-0pr">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="l5q-uW-Ywo"/>
+                                            <constraint firstAttribute="width" constant="49" id="xvS-eY-7TV"/>
+                                        </constraints>
+                                        <state key="normal" title="Next" backgroundImage="nextButton"/>
+                                        <connections>
+                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="yUo-9J-fN9"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Bd-E5w">
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="738" verticalCompressionResistancePriority="742" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-OX-2Qm">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="255" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-qS-saO">
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="myg-UG-hqZ"/>
+                                                    <constraint firstAttribute="width" constant="114" id="F26-Gg-Bny"/>
+                                                    <constraint firstAttribute="height" constant="170" id="myg-UG-hqZ"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -163,15 +165,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="5cw-rf-s8z"/>
-                                    <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="9" id="6Lq-gy-AxA"/>
+                                    <constraint firstAttribute="width" constant="328" id="5cw-rf-s8z"/>
                                     <constraint firstItem="M69-Ey-W3v" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" id="C1A-hM-akX"/>
-                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="20" id="DgN-Gr-lo2"/>
-                                    <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="8" id="IcX-hR-6a5"/>
-                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="48" id="VXf-sH-xKn"/>
-                                    <constraint firstItem="LNc-YC-0pr" firstAttribute="top" secondItem="z0e-Bd-E5w" secondAttribute="bottom" constant="24" id="YlY-AA-4VH"/>
-                                    <constraint firstAttribute="trailing" secondItem="z0e-Bd-E5w" secondAttribute="trailing" constant="20" id="p4p-dj-UiN"/>
-                                    <constraint firstAttribute="height" constant="320" id="t9e-Zb-Mmx"/>
+                                    <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="8" id="F0t-Ho-CpU"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="8" id="K4c-2Y-Sv9"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="36" id="NYm-ML-eLB"/>
+                                    <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="8" id="YvT-G6-zUE"/>
+                                    <constraint firstAttribute="trailing" secondItem="z0e-Bd-E5w" secondAttribute="trailing" constant="8" id="sZb-Ff-4vW"/>
+                                    <constraint firstAttribute="height" constant="247" id="t9e-Zb-Mmx"/>
                                     <constraint firstItem="M69-Ey-W3v" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" id="zdq-ou-IaV"/>
                                 </constraints>
                                 <connections>

@@ -85,6 +85,7 @@ class StartButton: UIButton
         animate.toValue     = [0.75, 1.0, 1.0]
         animate.duration    = 1.0
         animate.repeatCount = Float.infinity
+        animate.fillMode    = kCAFillModeForwards
         
         return animate
     }

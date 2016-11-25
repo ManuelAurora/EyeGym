@@ -28,7 +28,11 @@ class IntroductionViewController: UIViewController
         else
         {
             animateTransition() // hides intro view before text and picture is changed
-            introductionView.textView.text = introductionViewModel.nextPageText()
+            
+            let nextPageData = introductionViewModel.nextPageData()
+            
+            introductionView.textView.text   = nextPageData.text
+            introductionView.imageView.image = nextPageData.image
         }
     }
     
@@ -53,8 +57,11 @@ class IntroductionViewController: UIViewController
         
         introductionView.alpha              = 1.0
         introductionView.layer.cornerRadius = 10
-        introductionView.imageView.image    = UIImage(withAsset: .group)
-        introductionView.textView.text      = introductionViewModel.firstPageText()
+        
+        let firstPageData = introductionViewModel.firstPageData()
+        
+        introductionView.textView.text      = firstPageData.text
+        introductionView.imageView.image    = firstPageData.image
     }
     
     private func subscribeNotifications() {
