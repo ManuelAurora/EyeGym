@@ -14,6 +14,7 @@ class IntroductionPageViewModel
     private var currentPage = 1 {
         didSet
         {
+            //if current page is last - will send notification about it to the view controller.
             if currentPage == introductionPages.count
             {
                 let notif = Notification(name: .init(ViewModelNotificationNames.lastIntroPageDidAppear.rawValue))

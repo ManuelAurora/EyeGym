@@ -72,9 +72,9 @@ class TrainingViewController: UIViewController, SegueHandlerType
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
        
-        startButton.textForMask = "Start"
-    }    
-    
+        startButton.textForMask = "Старт"
+    }
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
