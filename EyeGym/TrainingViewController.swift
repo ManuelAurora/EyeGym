@@ -17,6 +17,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     private let maxDistance: CGFloat = 120
     
+    var isIntroAppeared = false
+    
     fileprivate var isStarted = false {
         didSet {
             isStarted ? prepareForTraining() : stopTraining()
@@ -95,7 +97,13 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     private func showIntroductionView() {
         
-        let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC)
+        isIntroAppeared = true
+        
+        toggleHideAll()
+        
+        let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC) as! IntroductionViewController
+        
+        controller.trainingVC = self
         
         present(controller, animated: true, completion: nil)
     }
@@ -109,6 +117,20 @@ class TrainingViewController: UIViewController, SegueHandlerType
         traningPreparationSpinner?.removeFromSuperlayer()
         
         toggleControlsHiding()
+    }
+    
+    func toggleHideAll() {
+       
+        let value: CGFloat = isIntroAppeared ? 0 : 1
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.infoButton.alpha             = value
+            self.startButton.alpha            = value
+            self.timeIntervalSegControl.alpha = value
+            self.trainingTimerLabel.alpha     = value
+            self.leftImage.alpha              = value
+            self.rightImage.alpha             = value
+        })        
     }
     
     private func toggleControlsHiding() {
