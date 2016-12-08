@@ -38,6 +38,11 @@
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-d3-Rdz">
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kow-ro-oaN" userLabel="Training Timer">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
                                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <segments>
@@ -101,6 +106,7 @@
                         <outlet property="rightImage" destination="2P5-Rl-nnQ" id="QIy-G6-LUT"/>
                         <outlet property="startButton" destination="hOl-xZ-zZK" id="adS-zw-sPS"/>
                         <outlet property="timeIntervalSegControl" destination="Zsv-l6-iQU" id="Fk7-hc-bWt"/>
+                        <outlet property="trainingTimerLabel" destination="Kow-ro-oaN" id="vPq-2w-YPc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOj-zk-xea" userLabel="First Responder" sceneMemberID="firstResponder"/>

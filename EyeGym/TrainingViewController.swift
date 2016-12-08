@@ -15,7 +15,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         case InstructionsViewController
     }
     
-    private let maxDistance: CGFloat = 150
+    private let maxDistance: CGFloat = 120
     
     fileprivate var isStarted = false {
         didSet {
@@ -40,6 +40,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
     
+    @IBOutlet weak var trainingTimerLabel:     UILabel!
     @IBOutlet weak var infoButton:             UIButton!
     @IBOutlet weak var backgroundImageView:    UIImageView!
     @IBOutlet weak var rightImage:             TrainingObjectView!
@@ -67,6 +68,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
         rightImage.animationDelegate     = self
         infoButton.tintColor             = view.tintColor
         timeIntervalSegControl.tintColor = view.tintColor
+        trainingTimerLabel.textColor     = view.tintColor
+        trainingTimerLabel.text          = "Время тренировки"
     }
     
     override func viewDidLayoutSubviews() {
@@ -116,6 +119,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
             self.infoButton.alpha             = value
             self.startButton.alpha            = value
             self.timeIntervalSegControl.alpha = value
+            self.trainingTimerLabel.alpha     = value
         }
     }
     

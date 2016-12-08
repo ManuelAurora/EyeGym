@@ -44,11 +44,13 @@ class OvalShapeLayer: CAShapeLayer
         
         strokeStartAnimation.fromValue = -0.5
         strokeStartAnimation.toValue   = 1.0
+        strokeStartAnimation.fillMode  = kCAFillModeForwards
         
         let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
         
         strokeEndAnimation.fromValue = 0.0
         strokeEndAnimation.toValue   = 1.0
+        strokeEndAnimation.fillMode  = kCAFillModeForwards
         
         let animationGroup = CAAnimationGroup()
         
