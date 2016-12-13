@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "TrainingViewController.saveValues() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "intensityStepper.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TrainingViewController.toggleControlsHiding() -&gt; ():TrainingViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -55,6 +63,14 @@
          <PersistentStrings>
             <PersistentString
                value = "superlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.intensityStepper.didset:TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "intensityStepper.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

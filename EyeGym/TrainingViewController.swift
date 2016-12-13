@@ -8,6 +8,12 @@
 
 import UIKit
 
+internal enum userSettingsKeys: String
+{
+    case intensityStepperValue
+    case trainingTime
+}
+
 class TrainingViewController: UIViewController, SegueHandlerType
 {
     internal enum SegueID: String
@@ -16,6 +22,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
     }
     
     private let minimumTrainingDistance = 45
+    
+    private let userDefaults = UserDefaults()
     
     var isIntroAppeared = false
     
@@ -60,8 +68,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
     @IBOutlet weak var leftImage:              TrainingObjectView!
     @IBOutlet weak var startButton:            StartButton!
     @IBOutlet weak var timeIntervalSegControl: UISegmentedControl!
-    @IBOutlet weak var intensityStepper:       UIStepper!
     @IBOutlet weak var controlPanelStackView:  UIStackView!
+    @IBOutlet weak var intensityStepper:       UIStepper!
     
     @IBAction func stopTraining(_ sender: UITapGestureRecognizer) { isStarted = false }
     
@@ -78,6 +86,9 @@ class TrainingViewController: UIViewController, SegueHandlerType
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadValues() // Load saved training settings
         
         leftImage.image           = UIImage(withAsset: .earth)
         rightImage.image          = UIImage(withAsset: .earth)
@@ -91,6 +102,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
         intensityLabel.textColor         = view.tintColor
         trainingTimerLabel.text          = "Время тренировки"
         
+        intensity = Int(intensityStepper.value)
+        
         setIntensityLabelText()
     }
     
@@ -103,15 +116,13 @@ class TrainingViewController: UIViewController, SegueHandlerType
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let defaults = UserDefaults()
-        
-        let introWasShown = defaults.bool(forKey: UserDefaultsKeys.wasShown.rawValue)
+        let introWasShown = userDefaults.bool(forKey: UserDefaultsKeys.wasShown.rawValue)
         
         if !introWasShown
         {
             showIntroductionView()
             
-            defaults.set(true, forKey: UserDefaultsKeys.wasShown.rawValue)
+            userDefaults.set(true, forKey: UserDefaultsKeys.wasShown.rawValue)
         }
     }
     
@@ -166,6 +177,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
     //Triggered by bool property isStarted
     private func prepareForTraining() {
         
+        saveValues()
         toggleControlsHiding()
         
         let point = CGPoint(
@@ -186,6 +198,16 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     private func setIntensityLabelText() {
         intensityLabel.text = "Интенсивность: \(intensity)"
+    }
+    
+    private func saveValues() {
+        userDefaults.set(intensityStepper.value, forKey: userSettingsKeys.intensityStepperValue.rawValue)
+        userDefaults.set(timeIntervalSegControl.selectedSegmentIndex, forKey: userSettingsKeys.trainingTime.rawValue)
+    }
+    
+    private func loadValues() {
+        timeIntervalSegControl.selectedSegmentIndex = userDefaults.integer(forKey: userSettingsKeys.trainingTime.rawValue)
+        intensityStepper.value = userDefaults.double(forKey: userSettingsKeys.intensityStepperValue.rawValue)
     }
 }
 
