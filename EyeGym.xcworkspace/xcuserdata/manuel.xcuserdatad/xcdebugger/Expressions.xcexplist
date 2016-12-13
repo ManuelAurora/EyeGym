@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TrainingViewController.intensityChanged(UIStepper) -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "intensity">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
          <PersistentStrings>
             <PersistentString

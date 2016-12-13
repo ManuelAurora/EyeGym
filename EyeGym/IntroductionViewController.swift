@@ -12,7 +12,7 @@ class IntroductionViewController: UIViewController
 {
     private let introductionViewModel = IntroductionPageViewModel()
     
-    private var canCloseIntroView: Bool = false
+    private var canCloseIntroView: Bool = false    
     
     var trainingVC: TrainingViewController!
     

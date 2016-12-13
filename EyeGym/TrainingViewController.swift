@@ -15,13 +15,17 @@ class TrainingViewController: UIViewController, SegueHandlerType
         case InstructionsViewController
     }
     
-    private let maxDistance: CGFloat = 120
+    private let minimumTrainingDistance = 45
     
     var isIntroAppeared = false
     
-    fileprivate var isStarted = false {
+    private var trainingDistance = 120 //maximum is 120, minimum is 45 for now
+    
+    private var intensity = 3 {
         didSet {
-            isStarted ? prepareForTraining() : stopTraining()
+            trainingDistance = minimumTrainingDistance + intensity * 15
+            
+            setIntensityLabelText()
         }
     }
     
@@ -42,14 +46,22 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
     
+    fileprivate var isStarted = false {
+        didSet {
+            isStarted ? prepareForTraining() : stopTraining()
+        }
+    }
+    
+    @IBOutlet weak var intensityLabel:         UILabel!
     @IBOutlet weak var trainingTimerLabel:     UILabel!
     @IBOutlet weak var infoButton:             UIButton!
     @IBOutlet weak var backgroundImageView:    UIImageView!
     @IBOutlet weak var rightImage:             TrainingObjectView!
     @IBOutlet weak var leftImage:              TrainingObjectView!
     @IBOutlet weak var startButton:            StartButton!
-    @IBOutlet weak var controlPanelStackView:  UIStackView!
     @IBOutlet weak var timeIntervalSegControl: UISegmentedControl!
+    @IBOutlet weak var intensityStepper:       UIStepper!
+    @IBOutlet weak var controlPanelStackView:  UIStackView!
     
     @IBAction func stopTraining(_ sender: UITapGestureRecognizer) { isStarted = false }
     
@@ -58,6 +70,11 @@ class TrainingViewController: UIViewController, SegueHandlerType
     @IBAction func showIntro(_ sender: UIButton) {
         
         showIntroductionView()
+    }
+    
+    @IBAction func intensityChanged(_ sender: UIStepper) {
+        
+        intensity = Int(sender.value)
     }
     
     override func viewDidLoad() {
@@ -71,7 +88,10 @@ class TrainingViewController: UIViewController, SegueHandlerType
         infoButton.tintColor             = view.tintColor
         timeIntervalSegControl.tintColor = view.tintColor
         trainingTimerLabel.textColor     = view.tintColor
+        intensityLabel.textColor         = view.tintColor
         trainingTimerLabel.text          = "Время тренировки"
+        
+        setIntensityLabelText()
     }
     
     override func viewDidLayoutSubviews() {
@@ -124,12 +144,11 @@ class TrainingViewController: UIViewController, SegueHandlerType
         let value: CGFloat = isIntroAppeared ? 0 : 1
         
         UIView.animate(withDuration: 0.5, animations: {
-            self.infoButton.alpha             = value
-            self.startButton.alpha            = value
-            self.timeIntervalSegControl.alpha = value
-            self.trainingTimerLabel.alpha     = value
-            self.leftImage.alpha              = value
-            self.rightImage.alpha             = value
+            self.infoButton.alpha            = value
+            self.startButton.alpha           = value
+            self.leftImage.alpha             = value
+            self.rightImage.alpha            = value
+            self.controlPanelStackView.alpha = value
         })        
     }
     
@@ -138,10 +157,9 @@ class TrainingViewController: UIViewController, SegueHandlerType
         let value: CGFloat = isStarted ? 0 : 1
         
         UIView.animate(withDuration: 0.7) {
-            self.infoButton.alpha             = value
-            self.startButton.alpha            = value
-            self.timeIntervalSegControl.alpha = value
-            self.trainingTimerLabel.alpha     = value
+            self.infoButton.alpha            = value
+            self.startButton.alpha           = value
+            self.controlPanelStackView.alpha = value
         }
     }
     
@@ -159,9 +177,15 @@ class TrainingViewController: UIViewController, SegueHandlerType
         delay(seconds: 5) {
             guard self.isStarted else { return }
             
-            self.leftImage.animate(with: self.requestedTimer, direction: .left, distance: self.maxDistance)
-            self.rightImage.animate(with: self.requestedTimer, direction: .right, distance: self.maxDistance)
+            let distance = CGFloat(self.trainingDistance)
+            
+            self.leftImage.animate(with: self.requestedTimer, direction: .left, distance: distance)
+            self.rightImage.animate(with: self.requestedTimer, direction: .right, distance: distance)
         }
+    }
+    
+    private func setIntensityLabelText() {
+        intensityLabel.text = "Интенсивность: \(intensity)"
     }
 }
 

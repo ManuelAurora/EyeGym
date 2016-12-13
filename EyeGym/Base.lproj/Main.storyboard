@@ -10,6 +10,12 @@
         <!--Training View Controller-->
         <scene sceneID="qNn-v2-Zi5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOj-zk-xea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cat-JF-E7N">
+                    <connections>
+                        <action selector="stopTraining:" destination="o60-NY-vr9" id="Y73-0i-n0H"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController id="o60-NY-vr9" customClass="TrainingViewController" customModule="EyeGym" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q4c-t4-nSy"/>
@@ -36,52 +42,82 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-d3-Rdz">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="dbC-JK-LbN" userLabel="Control Panel Stack View">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kow-ro-oaN" userLabel="Training Timer">
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
-                                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <segments>
-                                            <segment title="01:00"/>
-                                            <segment title="01:30"/>
-                                            <segment title="02:00"/>
-                                        </segments>
-                                        <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK" customClass="StartButton" customModule="EyeGym" customModuleProvider="target">
-                                        <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="start" destination="o60-NY-vr9" eventType="touchUpInside" id="62L-87-qHJ"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-d3-Rdz" userLabel="Timer Panel Stack View">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kow-ro-oaN" userLabel="Training Timer">
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
+                                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <segments>
+                                                    <segment title="01:00"/>
+                                                    <segment title="01:30"/>
+                                                    <segment title="02:00"/>
+                                                </segments>
+                                                <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="162" id="bfI-kk-PM7"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QJc-1r-rRD" userLabel="Intensity Panel Stack View">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="intensity: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nu-5b-6UY">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="dZs-fl-pC8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="628-6o-Ba1">
+                                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="intensityChanged:" destination="o60-NY-vr9" eventType="valueChanged" id="JTN-FF-NVz"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="mHt-ZK-vel"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="94" id="snG-xq-mmG"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="162" id="bfI-kk-PM7"/>
-                                </constraints>
-                                <variation key="widthClass=compact" axis="vertical"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msk-rW-wcy">
                                 <connections>
                                     <action selector="showIntro:" destination="o60-NY-vr9" eventType="touchUpInside" id="NM4-cu-Whp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK" customClass="StartButton" customModule="EyeGym" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="162" id="A9l-bc-2or"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="start" destination="o60-NY-vr9" eventType="touchUpInside" id="62L-87-qHJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="hOl-xZ-zZK" firstAttribute="top" secondItem="dbC-JK-LbN" secondAttribute="bottom" constant="20" id="ECJ-xW-gSL"/>
                             <constraint firstItem="aNn-2S-cZR" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="Ezy-bt-DPm"/>
                             <constraint firstItem="aNn-2S-cZR" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="Jzx-kL-KkO"/>
                             <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="gPk-41-5Y6" secondAttribute="bottom" id="ScX-IB-f8P"/>
-                            <constraint firstItem="qy1-d3-Rdz" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="aV2-K3-1ID"/>
+                            <constraint firstItem="dbC-JK-LbN" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="WM2-uj-cvZ"/>
                             <constraint firstItem="gPk-41-5Y6" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leading" id="b25-8A-UAb"/>
-                            <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="qy1-d3-Rdz" secondAttribute="bottom" constant="25" id="bAg-Sx-LOY"/>
                             <constraint firstItem="gPk-41-5Y6" firstAttribute="top" secondItem="xMd-vq-Txt" secondAttribute="top" id="bOf-Vp-qMd"/>
+                            <constraint firstItem="hOl-xZ-zZK" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="eul-wC-4Bw"/>
                             <constraint firstItem="Msk-rW-wcy" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leadingMargin" id="n6a-hF-VJx"/>
-                            <constraint firstItem="Msk-rW-wcy" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="42" id="ogz-Dd-63D"/>
+                            <constraint firstItem="Msk-rW-wcy" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="8" id="ogz-Dd-63D"/>
+                            <constraint firstItem="dbC-JK-LbN" firstAttribute="top" secondItem="aNn-2S-cZR" secondAttribute="bottom" constant="20" id="taL-pl-l34"/>
                             <constraint firstAttribute="trailing" secondItem="gPk-41-5Y6" secondAttribute="trailing" id="v9U-Ze-IEm"/>
                         </constraints>
                         <variation key="default">
@@ -100,8 +136,10 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="gPk-41-5Y6" id="IiR-Ld-3IJ"/>
-                        <outlet property="controlPanelStackView" destination="qy1-d3-Rdz" id="bup-qO-zwd"/>
+                        <outlet property="controlPanelStackView" destination="dbC-JK-LbN" id="XWo-yf-kz6"/>
                         <outlet property="infoButton" destination="Msk-rW-wcy" id="JaB-hm-9Ye"/>
+                        <outlet property="intensityLabel" destination="7Nu-5b-6UY" id="ESm-og-anK"/>
+                        <outlet property="intensityStepper" destination="628-6o-Ba1" id="utn-CK-4z1"/>
                         <outlet property="leftImage" destination="cK6-Vl-Cmn" id="Uc2-DT-Oab"/>
                         <outlet property="rightImage" destination="2P5-Rl-nnQ" id="QIy-G6-LUT"/>
                         <outlet property="startButton" destination="hOl-xZ-zZK" id="adS-zw-sPS"/>
@@ -109,12 +147,6 @@
                         <outlet property="trainingTimerLabel" destination="Kow-ro-oaN" id="vPq-2w-YPc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cOj-zk-xea" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="cat-JF-E7N">
-                    <connections>
-                        <action selector="stopTraining:" destination="o60-NY-vr9" id="Y73-0i-n0H"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2345.577211394303" y="472.80000000000001"/>
         </scene>
