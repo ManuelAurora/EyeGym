@@ -134,12 +134,14 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="z0e-Bd-E5w">
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="249" verticalCompressionResistancePriority="250" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-OX-2Qm">
-                                                <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
-                                                <color key="textColor" red="0.85078534029999997" green="0.85078534029999997" blue="0.85078534029999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6I-af-sdR" userLabel="IntroText">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="450" id="WMt-M3-sEo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="255" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-qS-saO">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="211" id="HWp-m0-VSX"/>
@@ -173,18 +175,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="z0e-Bd-E5w" secondAttribute="trailing" constant="100" id="B9F-rH-AXv"/>
                                     <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="25" id="VoE-RR-xku"/>
-                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="20" id="ZRZ-zJ-YR7"/>
-                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="top" secondItem="M69-Ey-W3v" secondAttribute="bottom" constant="39" id="eYY-8j-89v"/>
-                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="100" id="fgJ-c5-hRV"/>
-                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="20" id="jIO-cz-XBQ"/>
+                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="8" id="ZRZ-zJ-YR7"/>
+                                    <constraint firstItem="M69-Ey-W3v" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="8" id="jIO-cz-XBQ"/>
                                     <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="11" id="tUO-Bj-z6y"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="centerY" secondItem="mNj-ia-la1" secondAttribute="centerY" id="tX7-yN-Dee"/>
+                                    <constraint firstItem="z0e-Bd-E5w" firstAttribute="centerX" secondItem="mNj-ia-la1" secondAttribute="centerX" id="vvc-RH-iNA"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="PIP-qS-saO" id="Nnn-ab-9kS"/>
                                     <outlet property="nextButton" destination="LNc-YC-0pr" id="Y3I-mO-4PA"/>
-                                    <outlet property="textView" destination="rWO-OX-2Qm" id="NnT-Bb-7SZ"/>
+                                    <outlet property="textLabel" destination="Y6I-af-sdR" id="WTS-ac-kKb"/>
                                 </connections>
                             </view>
                         </subviews>

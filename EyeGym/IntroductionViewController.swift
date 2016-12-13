@@ -34,7 +34,7 @@ class IntroductionViewController: UIViewController
             
             let nextPageData = introductionViewModel.nextPageData()
             
-            introductionView.textView.text   = nextPageData.text
+            introductionView.textLabel.text   = nextPageData.text
             introductionView.imageView.image = nextPageData.image
         }
     }
@@ -65,7 +65,7 @@ class IntroductionViewController: UIViewController
         
         let firstPageData = introductionViewModel.firstPageData()
         
-        introductionView.textView.text      = firstPageData.text
+        introductionView.textLabel.text      = firstPageData.text
         introductionView.imageView.image    = firstPageData.image
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class IntroductionView: UIView
 {
-    @IBOutlet weak var textView:   UITextView!
+    @IBOutlet weak var textLabel:   UILabel!
     @IBOutlet weak var imageView:  UIImageView!
     @IBOutlet weak var nextButton: UIButton!    
 }
