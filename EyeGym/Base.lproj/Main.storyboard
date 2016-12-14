@@ -185,17 +185,6 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-YC-0pr">
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="qYX-KT-edL"/>
-                                            <constraint firstAttribute="height" constant="40" id="uGd-6k-FQm"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <state key="normal" title="Next" backgroundImage="nextButton"/>
-                                        <connections>
-                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="yUo-9J-fN9"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Ey-W3v">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="2Sv-R3-ltc"/>
@@ -207,15 +196,39 @@
                                             <action selector="closeIntroView:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="WPU-gY-cgo"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNv-rV-DXd">
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="6IZ-9k-K0S"/>
+                                            <constraint firstAttribute="height" constant="40" id="CTy-kb-oR6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Previous" backgroundImage="nextButton"/>
+                                        <connections>
+                                            <action selector="previous:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="0vN-nF-dIy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNc-YC-0pr">
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="qYX-KT-edL"/>
+                                            <constraint firstAttribute="height" constant="40" id="uGd-6k-FQm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Next" backgroundImage="nextButton"/>
+                                        <connections>
+                                            <action selector="next:" destination="VVA-uz-2Oe" eventType="touchUpInside" id="yUo-9J-fN9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="25" id="VoE-RR-xku"/>
+                                    <constraint firstItem="pNv-rV-DXd" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="20" id="1ZA-p2-HcS"/>
+                                    <constraint firstAttribute="trailing" secondItem="LNc-YC-0pr" secondAttribute="trailing" constant="20" id="Onu-yk-DrO"/>
                                     <constraint firstItem="z0e-Bd-E5w" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="47.5" id="XaW-6Y-eIG"/>
                                     <constraint firstItem="M69-Ey-W3v" firstAttribute="top" secondItem="mNj-ia-la1" secondAttribute="top" constant="8" id="ZRZ-zJ-YR7"/>
+                                    <constraint firstAttribute="bottom" secondItem="pNv-rV-DXd" secondAttribute="bottom" constant="20" id="dGT-8q-hKe"/>
+                                    <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="20" id="ho8-Q2-aQp"/>
                                     <constraint firstItem="M69-Ey-W3v" firstAttribute="leading" secondItem="mNj-ia-la1" secondAttribute="leading" constant="8" id="jIO-cz-XBQ"/>
                                     <constraint firstAttribute="trailing" secondItem="z0e-Bd-E5w" secondAttribute="trailing" constant="47.5" id="lzy-Ug-jPC"/>
-                                    <constraint firstAttribute="bottom" secondItem="LNc-YC-0pr" secondAttribute="bottom" constant="11" id="tUO-Bj-z6y"/>
                                     <constraint firstItem="z0e-Bd-E5w" firstAttribute="centerY" secondItem="mNj-ia-la1" secondAttribute="centerY" id="tX7-yN-Dee"/>
                                     <constraint firstItem="z0e-Bd-E5w" firstAttribute="centerX" secondItem="mNj-ia-la1" secondAttribute="centerX" id="vvc-RH-iNA"/>
                                 </constraints>
@@ -239,6 +252,7 @@
                         <outlet property="closeButton" destination="M69-Ey-W3v" id="3fM-Qm-xX9"/>
                         <outlet property="introductionView" destination="mNj-ia-la1" id="s4o-oY-PfE"/>
                         <outlet property="nextButton" destination="LNc-YC-0pr" id="Ycb-is-g0r"/>
+                        <outlet property="previousButton" destination="pNv-rV-DXd" id="rq2-Qu-Cjz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6b-K6-9H1" userLabel="First Responder" sceneMemberID="firstResponder"/>

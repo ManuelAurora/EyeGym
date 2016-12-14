@@ -14,12 +14,9 @@ class IntroductionPageViewModel
     private var currentPage = 1 {
         didSet
         {
-            //if current page is last - will send notification about it to the view controller.
-            if currentPage == introductionPages.count
-            {
-                let notif = Notification(name: .init(ViewModelNotificationNames.lastIntroPageDidAppear.rawValue))
-                NotificationCenter.default.post(notif)
-            }
+            //Notify observers if page changed
+            let notif = Notification(name: .init(ViewModelNotificationNames.pageNumberChanged.rawValue))
+            NotificationCenter.default.post(notif)
         }
     }
     
@@ -37,6 +34,19 @@ class IntroductionPageViewModel
         ]
     }()
     
+    func pagesCount() -> Int { return introductionPages.count }
+    
+    func currentPageNumber() -> Int { return currentPage }
+    
+    func previousPageData() -> (text: String?, image: UIImage?) {
+        
+        guard currentPage >= 2 else { return (introductionPages.first?.text, introductionPages.first?.image) }
+        
+        currentPage -= 1
+        
+        return (introductionPages[currentPage - 1].text, introductionPages[currentPage - 1].image)
+    }
+    
     func firstPageData() -> (text: String?, image: UIImage?) {
         
         return (introductionPages.first?.text, introductionPages.first?.image)
@@ -45,7 +55,6 @@ class IntroductionPageViewModel
     func nextPageData() -> (text: String?, image: UIImage?) {
         
         guard currentPage < introductionPages.count else {
-            
             currentPage = 1; return (introductionPages.first?.text, introductionPages.first?.image)
         }
         

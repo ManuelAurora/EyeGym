@@ -18,7 +18,7 @@ func delay(seconds: Double, completion: @escaping () -> ()) {
 
 enum ViewModelNotificationNames: String
 {
-    case lastIntroPageDidAppear
+    case pageNumberChanged
 }
 
 struct AnimationConstants

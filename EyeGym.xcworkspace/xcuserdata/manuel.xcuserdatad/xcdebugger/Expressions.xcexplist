@@ -3,34 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "TrainingViewController.saveValues() -&gt; ():TrainingViewController.swift">
+         contextName = "IntroductionViewController.next(UIButton) -&gt; ():IntroductionViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "intensityStepper.value">
+               value = " presentedViewController!">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TrainingViewController.toggleControlsHiding() -&gt; ():TrainingViewController.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "isStarted">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TrainingViewController.intensityChanged(UIStepper) -&gt; ():TrainingViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "intensity">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "dimmingView.frame">
+               value = "previousButton.alpha">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -39,30 +18,6 @@
          <PersistentStrings>
             <PersistentString
                value = "currentPage">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "TrainingObjectView.animationDidStop(CAAnimation, finished : Bool) -&gt; ():TrainingObjectView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.layer.frame.origin">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "instructionsController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "OvalShapeLayer.init(point : CGPoint) -&gt; OvalShapeLayer:OvalShapeLayer.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "superlayer">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -83,10 +38,66 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "IntroductionViewController.next(UIButton) -&gt; ():IntroductionViewController.swift">
+         contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
          <PersistentStrings>
             <PersistentString
-               value = " presentedViewController!">
+               value = "dimmingView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "instructionsController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.saveValues() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "intensityStepper.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingObjectView.animationDidStop(CAAnimation, finished : Bool) -&gt; ():TrainingObjectView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.layer.frame.origin">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.intensityChanged(UIStepper) -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "intensity">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OvalShapeLayer.init(point : CGPoint) -&gt; OvalShapeLayer:OvalShapeLayer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "superlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.toggleControlsHiding() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isStarted">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "IntroductionPageViewModel.getCurrentPageNumber() -&gt; Int:IntroductionPageViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentPage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
