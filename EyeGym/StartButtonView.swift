@@ -41,8 +41,8 @@ class StartButton: UIButton
         
         return layer
     }()
-    
-    func makeGradientMaskViewWith(bounds: CGRect) {        
+       
+    func makeGradientMaskViewWith(bounds: CGRect) {
         
         gradientLayer.frame = bounds
         

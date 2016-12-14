@@ -37,9 +37,9 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
     
-    private var traningPreparationSpinner: OvalShapeLayer? {
+    private var trainingPreparationSpinner: OvalShapeLayer? {
         didSet {
-            controlPanelStackView.layer.addSublayer(traningPreparationSpinner!)
+            controlPanelStackView.layer.addSublayer(trainingPreparationSpinner!)
         }
     }
     
@@ -60,16 +60,18 @@ class TrainingViewController: UIViewController, SegueHandlerType
         }
     }
     
-    @IBOutlet weak var intensityLabel:         UILabel!
-    @IBOutlet weak var trainingTimerLabel:     UILabel!
-    @IBOutlet weak var infoButton:             UIButton!
-    @IBOutlet weak var backgroundImageView:    UIImageView!
-    @IBOutlet weak var rightImage:             TrainingObjectView!
-    @IBOutlet weak var leftImage:              TrainingObjectView!
-    @IBOutlet weak var startButton:            StartButton!
-    @IBOutlet weak var timeIntervalSegControl: UISegmentedControl!
-    @IBOutlet weak var controlPanelStackView:  UIStackView!
-    @IBOutlet weak var intensityStepper:       UIStepper!
+    @IBOutlet weak var intensityLabel:          UILabel!
+    @IBOutlet weak var trainingTimerLabel:      UILabel!
+    @IBOutlet weak var infoButton:              UIButton!
+    @IBOutlet weak var backgroundImageView:     UIImageView!
+    @IBOutlet weak var rightImage:              TrainingObjectView!
+    @IBOutlet weak var leftImage:               TrainingObjectView!
+    @IBOutlet weak var startButton:             StartButton!
+    @IBOutlet weak var timeIntervalSegControl:  UISegmentedControl!
+    @IBOutlet weak var controlPanelStackView:   UIStackView!
+    @IBOutlet weak var intensityPanelStackView: UIStackView!
+    @IBOutlet weak var timerPanelStackView:     UIStackView!
+    @IBOutlet weak var intensityStepper:        UIStepper!
     
     @IBAction func stopTraining(_ sender: UITapGestureRecognizer) { isStarted = false }
     
@@ -145,7 +147,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         leftImage.layer.removeAllAnimations()
         rightImage.layer.removeAllAnimations()
         
-        traningPreparationSpinner?.removeFromSuperlayer()
+        trainingPreparationSpinner?.removeFromSuperlayer()
         
         toggleControlsHiding()
     }
@@ -155,11 +157,11 @@ class TrainingViewController: UIViewController, SegueHandlerType
         let value: CGFloat = isIntroAppeared ? 0 : 1
         
         UIView.animate(withDuration: 0.5, animations: {
-            self.infoButton.alpha            = value
-            self.startButton.alpha           = value
-            self.leftImage.alpha             = value
-            self.rightImage.alpha            = value
-            self.controlPanelStackView.alpha = value
+            self.infoButton.alpha              = value
+            self.startButton.alpha             = value
+            self.leftImage.alpha               = value
+            self.rightImage.alpha              = value
+            self.controlPanelStackView.alpha   = value
         })        
     }
     
@@ -168,9 +170,10 @@ class TrainingViewController: UIViewController, SegueHandlerType
         let value: CGFloat = isStarted ? 0 : 1
         
         UIView.animate(withDuration: 0.7) {
-            self.infoButton.alpha            = value
-            self.startButton.alpha           = value
-            self.controlPanelStackView.alpha = value
+            self.infoButton.alpha              = value
+            self.startButton.alpha             = value
+            self.intensityPanelStackView.alpha = value
+            self.timerPanelStackView.alpha     = value
         }
     }
     
@@ -184,7 +187,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
             x: controlPanelStackView.bounds.width / 2,
             y: controlPanelStackView.bounds.height / 2)
         
-        traningPreparationSpinner = OvalShapeLayer(point: point)
+        trainingPreparationSpinner = OvalShapeLayer(point: point)
         
         delay(seconds: 5) {
             guard self.isStarted else { return }
