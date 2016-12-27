@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-xZ-zZK" customClass="StartButton" customModule="EyeGym" customModuleProvider="target">
-                                <rect key="frame" x="283.5" y="275" width="100" height="34"/>
+                                <rect key="frame" x="283.5" y="281" width="100" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="02L-LH-l6Q"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="76V-5r-cIe"/>
@@ -139,12 +139,12 @@
                         <constraints>
                             <constraint firstItem="eMS-NH-aNb" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="8ce-V4-aGN"/>
                             <constraint firstItem="Msk-rW-wcy" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="10" id="AZn-9e-FA2"/>
+                            <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="hOl-xZ-zZK" secondAttribute="bottom" constant="60" id="G33-w9-w04"/>
                             <constraint firstItem="Msk-rW-wcy" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leading" constant="10" id="RNa-bt-Sh5"/>
                             <constraint firstItem="UQZ-1R-E7f" firstAttribute="top" secondItem="gPk-41-5Y6" secondAttribute="bottom" id="ScX-IB-f8P"/>
                             <constraint firstItem="eMS-NH-aNb" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="UpV-KQ-y7a"/>
                             <constraint firstItem="gPk-41-5Y6" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leading" id="b25-8A-UAb"/>
                             <constraint firstItem="gPk-41-5Y6" firstAttribute="top" secondItem="xMd-vq-Txt" secondAttribute="top" id="bOf-Vp-qMd"/>
-                            <constraint firstItem="hOl-xZ-zZK" firstAttribute="top" secondItem="eMS-NH-aNb" secondAttribute="bottom" constant="20" id="bvE-X2-3jI"/>
                             <constraint firstItem="hOl-xZ-zZK" firstAttribute="centerX" secondItem="xMd-vq-Txt" secondAttribute="centerX" id="qxc-oH-6ab"/>
                             <constraint firstAttribute="trailing" secondItem="gPk-41-5Y6" secondAttribute="trailing" id="v9U-Ze-IEm"/>
                         </constraints>

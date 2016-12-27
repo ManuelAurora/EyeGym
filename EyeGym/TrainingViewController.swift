@@ -159,8 +159,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     private func toggleControlsHiding() {
         
-        let value: CGFloat = isStarted ? 0 : 1
-       
+        let value: CGFloat = isStarted ? 0 : 1       
         
         UIView.animate(withDuration: 0.7) {
             self.infoButton.alpha              = value
