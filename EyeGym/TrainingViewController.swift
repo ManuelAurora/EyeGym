@@ -27,6 +27,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     var isIntroAppeared = false
     
+    lazy var animator = TransitionAnimator()
+    
     private var trainingDistance = 120 //maximum is 120, minimum is 45 for now
     
     private var intensity = 3 {
@@ -39,7 +41,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
     
     private var trainingPreparationSpinner: OvalShapeLayer? {
         didSet {
-            controlPanelStackView.layer.addSublayer(trainingPreparationSpinner!)
+            view.layer.addSublayer(trainingPreparationSpinner!)
         }
     }
     
@@ -69,6 +71,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
     @IBOutlet weak var startButton:             StartButton!
     @IBOutlet weak var timeIntervalSegControl:  UISegmentedControl!
     @IBOutlet weak var controlPanelStackView:   UIStackView!
+    @IBOutlet weak var trainingFieldStackView:  UIStackView!
     @IBOutlet weak var intensityPanelStackView: UIStackView!
     @IBOutlet weak var timerPanelStackView:     UIStackView!
     @IBOutlet weak var intensityStepper:        UIStepper!
@@ -92,19 +95,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         
         loadValues() // Load saved training settings
         
-        leftImage.image           = UIImage(withAsset: .earth)
-        rightImage.image          = UIImage(withAsset: .earth)
-        backgroundImageView.image = UIImage(withAsset: .space)
-        
-        leftImage.animationDelegate      = self
-        rightImage.animationDelegate     = self
-        infoButton.tintColor             = view.tintColor
-        timeIntervalSegControl.tintColor = view.tintColor
-        trainingTimerLabel.textColor     = view.tintColor
-        intensityLabel.textColor         = view.tintColor
-        trainingTimerLabel.text          = "Время тренировки"
-        
-        intensity = Int(intensityStepper.value)
+        setTrainingViews()
         
         setIntensityLabelText()
     }
@@ -136,7 +127,8 @@ class TrainingViewController: UIViewController, SegueHandlerType
         
         let controller = storyboard!.instantiateViewController(withIdentifier: .introductionVC) as! IntroductionViewController
         
-        controller.trainingVC = self
+        controller.trainingVC            = self
+        controller.transitioningDelegate = self
         
         present(controller, animated: true, completion: nil)
     }
@@ -168,12 +160,14 @@ class TrainingViewController: UIViewController, SegueHandlerType
     private func toggleControlsHiding() {
         
         let value: CGFloat = isStarted ? 0 : 1
+       
         
         UIView.animate(withDuration: 0.7) {
             self.infoButton.alpha              = value
             self.startButton.alpha             = value
             self.intensityPanelStackView.alpha = value
             self.timerPanelStackView.alpha     = value
+            self.controlPanelStackView.isHidden = value == 1 ? false : true
         }
     }
     
@@ -183,11 +177,7 @@ class TrainingViewController: UIViewController, SegueHandlerType
         saveValues()
         toggleControlsHiding()
         
-        let point = CGPoint(
-            x: controlPanelStackView.bounds.width / 2,
-            y: controlPanelStackView.bounds.height / 2)
-        
-        trainingPreparationSpinner = OvalShapeLayer(point: point)
+        trainingPreparationSpinner = OvalShapeLayer(point: startButton.center)
         
         delay(seconds: 5) {
             guard self.isStarted else { return }
@@ -200,17 +190,37 @@ class TrainingViewController: UIViewController, SegueHandlerType
     }
     
     private func setIntensityLabelText() {
+        
         intensityLabel.text = "Интенсивность: \(intensity)"
     }
     
     private func saveValues() {
+        
         userDefaults.set(intensityStepper.value, forKey: userSettingsKeys.intensityStepperValue.rawValue)
         userDefaults.set(timeIntervalSegControl.selectedSegmentIndex, forKey: userSettingsKeys.trainingTime.rawValue)
     }
     
     private func loadValues() {
+        
         timeIntervalSegControl.selectedSegmentIndex = userDefaults.integer(forKey: userSettingsKeys.trainingTime.rawValue)
         intensityStepper.value = userDefaults.double(forKey: userSettingsKeys.intensityStepperValue.rawValue)
+    }
+    
+    private func setTrainingViews() {
+        
+        leftImage.image           = UIImage(withAsset: .earth)
+        rightImage.image          = UIImage(withAsset: .earth)
+        backgroundImageView.image = UIImage(withAsset: .space)        
+       
+        leftImage.animationDelegate      = self
+        rightImage.animationDelegate     = self
+        infoButton.tintColor             = view.tintColor
+        timeIntervalSegControl.tintColor = view.tintColor
+        trainingTimerLabel.textColor     = view.tintColor
+        intensityLabel.textColor         = view.tintColor
+        trainingTimerLabel.text          = "Время тренировки"
+        
+        intensity = Int(intensityStepper.value)
     }
 }
 
@@ -222,7 +232,22 @@ extension TrainingViewController: CAAnimationDelegate
     }
 }
 
+extension TrainingViewController: UIViewControllerTransitioningDelegate
+{
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
+        animator.forDismissal = false
+        
+        return animator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        animator.forDismissal = true
+        
+        return animator
+    }
+}
 
 
 

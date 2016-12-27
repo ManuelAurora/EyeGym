@@ -25,12 +25,9 @@ class IntroductionViewController: UIViewController
     
     @IBAction func previous(_ sender: UIButton) {
         
-        animateTransition()
-        
         let previousPageData = introductionViewModel.previousPageData()
         
-        introductionView.textLabel.text  = previousPageData.text
-        introductionView.imageView.image = previousPageData.image
+        changePageDataAnimated(previousPageData)
     }
     
     @IBAction func next(_ sender: UIButton) {
@@ -41,13 +38,10 @@ class IntroductionViewController: UIViewController
         }
         else
         {
-            // hides intro view before text and picture is changed
-            animateTransition()
-            
             let nextPageData = introductionViewModel.nextPageData()
             
-            introductionView.textLabel.text  = nextPageData.text
-            introductionView.imageView.image = nextPageData.image
+            // hides intro view before text and picture is changed
+            changePageDataAnimated(nextPageData)
         }
     }
     
@@ -61,9 +55,8 @@ class IntroductionViewController: UIViewController
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)        
         
-        transitioningDelegate  = self
         modalPresentationStyle = .custom
     }
     
@@ -72,8 +65,9 @@ class IntroductionViewController: UIViewController
         nextButton.setTitle("Дальше", for: .normal)
         previousButton.setTitle("Назад", for: .normal)
         
-        previousButton.alpha                = 0
-        introductionView.alpha              = 1.0
+        previousButton.alpha   = 0
+        introductionView.alpha = 1.0
+        
         introductionView.layer.cornerRadius = 10
         closeButton.layer.cornerRadius      = closeButton.imageView!.image!.size.width / 2
         
@@ -113,31 +107,23 @@ class IntroductionViewController: UIViewController
         }
     }
     
-    private func animateTransition() {
+    private func changePageDataAnimated(_ page: (text: String?, image: UIImage?)) {
         
-        UIView.transition(with: introductionView,
-                          duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: {
-                            
-                self.introductionView.isHidden = true
+        let animDuration = 0.4
+        
+        UIView.animate(withDuration: animDuration, delay: 0, options: [], animations: {
+            self.introductionView.imageView.alpha = 0
+            self.introductionView.textLabel.alpha = 0
         }) { _ in
+            self.introductionView.textLabel.text     = page.text
+            self.introductionView.imageView.isHidden = page.image == nil ? true : false
+            self.introductionView.imageView.image    = page.image
             
-            UIView.transition(with: self.introductionView,
-                              duration: 0.4,
-                              options: .transitionCrossDissolve,
-                              animations: {
-                
-                self.introductionView.isHidden = false
-                }, completion: nil)
+            UIView.animate(withDuration: animDuration, animations: { 
+                self.introductionView.imageView.alpha = 1.0
+                self.introductionView.textLabel.alpha = 1.0
+            })
         }
     }
 }
 
-extension IntroductionViewController: UIViewControllerTransitioningDelegate
-{
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        
-        return DimmingPresentationController(presentedViewController: presented, presenting: presenting)        
-    }
-}
