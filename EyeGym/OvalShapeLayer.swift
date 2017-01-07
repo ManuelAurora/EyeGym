@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 class OvalShapeLayer: CAShapeLayer
 {
@@ -40,34 +41,27 @@ class OvalShapeLayer: CAShapeLayer
     
     private func addPrepareForTrainingAnimations() {
         
-        let strokeStartAnimation = CABasicAnimation(keyPath: "strokeStart")
+        let strokeStartAnimation = POPBasicAnimation(propertyNamed: kPOPShapeLayerStrokeStart)!
         
-        strokeStartAnimation.fromValue = -0.5
-        strokeStartAnimation.toValue   = 1.0
-        strokeStartAnimation.fillMode  = kCAFillModeForwards
+        strokeStartAnimation.fromValue   = -0.5
+        strokeStartAnimation.toValue     = 1.0
+        strokeStartAnimation.duration    = 1.0
+        strokeStartAnimation.repeatCount = 5
         
-        let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        let strokeEndAnimation = POPBasicAnimation(propertyNamed: kPOPShapeLayerStrokeEnd)!
         
-        strokeEndAnimation.fromValue = 0.0
-        strokeEndAnimation.toValue   = 1.0
-        strokeEndAnimation.fillMode  = kCAFillModeForwards
+        strokeEndAnimation.fromValue   = 0.0
+        strokeEndAnimation.toValue     = 1.0
+        strokeEndAnimation.duration    = 1.0
+        strokeEndAnimation.repeatCount = 5
         
-        let animationGroup = CAAnimationGroup()
-        
-        animationGroup.duration    = 1
-        animationGroup.repeatCount = 5
-        animationGroup.animations  = [strokeStartAnimation, strokeEndAnimation]
-        
-        animationGroup.setValue(self, forKeyPath: AnimationConstants.KeyPath.layer)
-        
-        animationGroup.delegate = self
-        
-        self.add(animationGroup, forKey: nil)
+        self.pop_add(strokeStartAnimation, forKey: nil)
+        self.pop_add(strokeEndAnimation, forKey: nil)
     }
     
     deinit {
         print("DEBUG: DEINIT")
-    }
+    }   
 }
 
 extension OvalShapeLayer: CAAnimationDelegate
