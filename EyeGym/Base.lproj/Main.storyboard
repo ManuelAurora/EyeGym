@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -55,16 +56,16 @@
                                         <rect key="frame" x="92" y="95" width="316" height="60.000000000000028"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-d3-Rdz" userLabel="Timer Panel Stack View">
-                                                <rect key="frame" x="0.0" y="0.66666666666668561" width="162" height="58.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="1" width="162" height="58.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kow-ro-oaN" userLabel="Training Timer">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="20.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="20.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zsv-l6-iQU">
-                                                        <rect key="frame" x="0.0" y="30.333333333333314" width="162" height="29.000000000000028"/>
+                                                        <rect key="frame" x="0.0" y="30.333333333333343" width="162" height="29"/>
                                                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <segments>
                                                             <segment title="01:00"/>
@@ -141,12 +142,24 @@
                                     <action selector="start" destination="o60-NY-vr9" eventType="touchUpInside" id="62L-87-qHJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shW-5T-GMy">
+                                <rect key="frame" x="679" y="32" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="7Km-k7-hSt"/>
+                                    <constraint firstAttribute="width" constant="25" id="F1Y-Yb-wLL"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="optionsMenuButtonPressed:" destination="o60-NY-vr9" eventType="touchUpInside" id="FDs-E1-AEP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="shW-5T-GMy" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="12" id="7E8-GA-hXe"/>
                             <constraint firstItem="eMS-NH-aNb" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" id="8ce-V4-aGN"/>
                             <constraint firstItem="Msk-rW-wcy" firstAttribute="top" secondItem="Q4c-t4-nSy" secondAttribute="bottom" constant="10" id="AZn-9e-FA2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="shW-5T-GMy" secondAttribute="trailing" constant="12" id="Hkb-hD-gQa"/>
                             <constraint firstItem="Msk-rW-wcy" firstAttribute="leading" secondItem="xMd-vq-Txt" secondAttribute="leading" constant="10" id="RNa-bt-Sh5"/>
                             <constraint firstItem="hOl-xZ-zZK" firstAttribute="centerY" secondItem="xMd-vq-Txt" secondAttribute="centerY" constant="110" id="SG9-Ps-bIX">
                                 <variation key="heightClass=compact-widthClass=regular" constant="135"/>
@@ -185,6 +198,7 @@
                         <outlet property="intensityPanelStackView" destination="QJc-1r-rRD" id="TLs-Ud-pC9"/>
                         <outlet property="intensityStepper" destination="628-6o-Ba1" id="utn-CK-4z1"/>
                         <outlet property="leftImage" destination="cK6-Vl-Cmn" id="Uc2-DT-Oab"/>
+                        <outlet property="optionsButton" destination="shW-5T-GMy" id="fdD-qO-BM3"/>
                         <outlet property="rightImage" destination="2P5-Rl-nnQ" id="QIy-G6-LUT"/>
                         <outlet property="startButton" destination="hOl-xZ-zZK" id="adS-zw-sPS"/>
                         <outlet property="timeIntervalSegControl" destination="Zsv-l6-iQU" id="Fk7-hc-bWt"/>

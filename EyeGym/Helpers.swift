@@ -16,9 +16,10 @@ func delay(seconds: Double, completion: @escaping () -> ()) {
     DispatchQueue.main.asyncAfter(deadline: popTime, execute: completion)    
 }
 
-enum ViewModelNotificationNames: String
+enum NotificationNames: String
 {
     case pageNumberChanged
+    case newImageRequested
 }
 
 struct AnimationConstants
@@ -55,10 +56,11 @@ enum Direction
 enum AssetID: String
 {
     case earth
+    case mercury
     case space
     case closeButton
     case closeObjectLook
-    case farObjectLook
+    case farObjectLook    
 }
 
 

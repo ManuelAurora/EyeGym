@@ -15,7 +15,7 @@ class IntroductionPageViewModel
         didSet
         {
             //Notify observers if page changed
-            let notif = Notification(name: .init(ViewModelNotificationNames.pageNumberChanged.rawValue))
+            let notif = Notification(name: .init(NotificationNames.pageNumberChanged.rawValue))
             NotificationCenter.default.post(notif)
         }
     }

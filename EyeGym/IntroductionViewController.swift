@@ -86,7 +86,7 @@ class IntroductionViewController: UIViewController
         
         //if intro view has reached last page - we can close window
         NotificationCenter.default.addObserver(
-            forName: NSNotification.Name(rawValue: ViewModelNotificationNames.pageNumberChanged.rawValue),
+            forName: NSNotification.Name(rawValue: NotificationNames.pageNumberChanged.rawValue),
             object: nil,
             queue: nil) { _ in
                 

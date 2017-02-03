@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" id="D28-yt-Qbl" customClass="OptionsView" customModule="EyeGym" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qIU-kt-0xV" userLabel="Options">
+                    <rect key="frame" x="8" y="133" width="484" height="72"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="knB-VL-qfF" userLabel="Steppers">
+                            <rect key="frame" x="0.0" y="0.0" width="232" height="72"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Ad-GI-ixx" userLabel="Change Image">
+                                    <rect key="frame" x="0.0" y="0.0" width="232" height="31"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Planet image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dub-YK-P6f">
+                                            <rect key="frame" x="0.0" y="5.5" width="138" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="5EE-9R-LsF">
+                                            <rect key="frame" x="138" y="1" width="94" height="29"/>
+                                            <connections>
+                                                <action selector="changeImage:" destination="D28-yt-Qbl" eventType="valueChanged" id="zB6-Uf-P7T"/>
+                                            </connections>
+                                        </stepper>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="flv-Rx-vhb" userLabel="Change Background">
+                                    <rect key="frame" x="0.0" y="41" width="232" height="31"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-pt-3ai">
+                                            <rect key="frame" x="0.0" y="5.5" width="138" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BY7-lT-4uy">
+                                            <rect key="frame" x="138" y="1" width="94" height="29"/>
+                                        </stepper>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MLt-Hb-e1y" userLabel="Togglers">
+                            <rect key="frame" x="252" y="0.0" width="232" height="72"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2KD-hn-qWb" userLabel="Toggle Image">
+                                    <rect key="frame" x="0.0" y="0.0" width="232" height="31"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Toggle planet image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxN-6v-pCX">
+                                            <rect key="frame" x="0.0" y="5.5" width="183" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXL-mc-Pok">
+                                            <rect key="frame" x="183" y="0.0" width="51" height="31"/>
+                                        </switch>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-MM-eqD" userLabel="Toggle Background">
+                                    <rect key="frame" x="0.0" y="41" width="232" height="31"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toggle background" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jty-ck-iLE">
+                                            <rect key="frame" x="0.0" y="5.5" width="183" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twu-mL-8s6">
+                                            <rect key="frame" x="183" y="0.0" width="51" height="31"/>
+                                        </switch>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="a4z-MM-eqD" secondAttribute="bottom" id="ZIv-UA-ZDS"/>
+                                <constraint firstItem="2KD-hn-qWb" firstAttribute="top" secondItem="MLt-Hb-e1y" secondAttribute="top" id="o63-IL-u74"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRW-yI-m3G">
+                    <rect key="frame" x="226" y="210" width="48" height="30"/>
+                    <state key="normal" title="Unlock"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="XRW-yI-m3G" firstAttribute="centerX" secondItem="D28-yt-Qbl" secondAttribute="centerX" id="Pgt-ix-bAy"/>
+                <constraint firstAttribute="trailing" secondItem="qIU-kt-0xV" secondAttribute="trailing" constant="8" id="UT1-cD-pKA"/>
+                <constraint firstItem="qIU-kt-0xV" firstAttribute="leading" secondItem="D28-yt-Qbl" secondAttribute="leading" constant="8" id="fvT-d5-H5c"/>
+                <constraint firstAttribute="bottom" secondItem="XRW-yI-m3G" secondAttribute="bottom" constant="10" id="gNx-3d-ZyT"/>
+                <constraint firstAttribute="bottom" secondItem="qIU-kt-0xV" secondAttribute="bottom" constant="45" id="sGp-2O-2Rw"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="changeBackgroundLabel" destination="Z4n-pt-3ai" id="43q-R8-gQh"/>
+                <outlet property="changeBackgroundStepper" destination="BY7-lT-4uy" id="cGF-DY-62p"/>
+                <outlet property="changePlanetImageLabel" destination="dub-YK-P6f" id="4Qh-Il-PGK"/>
+                <outlet property="changePlanetImageStepper" destination="5EE-9R-LsF" id="4o8-Qe-3O2"/>
+                <outlet property="toggleBackgroundLabel" destination="Jty-ck-iLE" id="E3o-aV-lQu"/>
+                <outlet property="toggleBackgroundSwitch" destination="twu-mL-8s6" id="nfZ-kc-5BC"/>
+                <outlet property="togglePlanetImageLabel" destination="TxN-6v-pCX" id="LBo-ry-MJd"/>
+                <outlet property="togglePlanetImageSwitch" destination="lXL-mc-Pok" id="j5S-kX-aXN"/>
+                <outlet property="unlockButton" destination="XRW-yI-m3G" id="B8E-NU-I0a"/>
+            </connections>
+            <point key="canvasLocation" x="220" y="-14"/>
+        </view>
+    </objects>
+</document>

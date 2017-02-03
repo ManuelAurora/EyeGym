@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "TrainingViewController.productsRequest(SKProductsRequest, didReceive : SKProductsResponse) -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.invalidProductIdentifiers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "IntroductionViewController.next(UIButton) -&gt; ():IntroductionViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -38,6 +46,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "TrainingViewController.saveValues() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "intensityStepper.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DimmingPresentationController.presentationTransitionWillBegin() -&gt; ():DimmingPresentationController.swift">
          <PersistentStrings>
             <PersistentString
@@ -54,10 +70,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "TrainingViewController.saveValues() -&gt; ():TrainingViewController.swift">
+         contextName = "TrainingViewController.openOptionsMenu(UIButton) -&gt; ():TrainingViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "intensityStepper.value">
+               value = "view.bounds.height">
+            </PersistentString>
+            <PersistentString
+               value = "subView.frame.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OptionsView.changeImage(UIStepper) -&gt; ():OptionsView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "images.count">
+            </PersistentString>
+            <PersistentString
+               value = "currentImageIndex">
+            </PersistentString>
+            <PersistentString
+               value = "changePlanetImageStepper.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -98,6 +131,25 @@
          <PersistentStrings>
             <PersistentString
                value = "currentPage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TrainingViewController.trainingScreenModification() -&gt; ():TrainingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isOptionsMenuOpened">
+            </PersistentString>
+            <PersistentString
+               value = "image.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OptionsView.currentImage.didset:OptionsView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentImage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
